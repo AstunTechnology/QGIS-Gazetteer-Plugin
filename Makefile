@@ -31,9 +31,11 @@ TRANSLATIONS =
 
 PLUGINNAME = gazetteersearch
 
-PY_FILES = gazetteersearch.py gazetteersearchdialog.py __init__.py $(CURDIR)/parsers/__init__.py $(CURDIR)/parsers/astun.py
+PY_FILES = gazetteersearch.py gazetteersearchdialog.py __init__.py gazetter.py
 
-EXTRAS = icon.png metadata.txt 
+PARSERS = parsers
+
+EXTRAS = icon.png metadata.txt config.ini
 
 UI_FILES = ui_gazetteersearch.py
 
@@ -59,12 +61,13 @@ compile: $(UI_FILES) $(RESOURCE_FILES)
 # $HOME/.qgis/python/plugins
 deploy: compile doc transcompile
 	mkdir -p $(HOME)/.qgis/python/plugins/$(PLUGINNAME)
-	cp -vf $(PY_FILES) $(HOME)/.qgis/python/plugins/$(PLUGINNAME)
-	cp -vf $(UI_FILES) $(HOME)/.qgis/python/plugins/$(PLUGINNAME)
-	cp -vf $(RESOURCE_FILES) $(HOME)/.qgis/python/plugins/$(PLUGINNAME)
-	cp -vf $(EXTRAS) $(HOME)/.qgis/python/plugins/$(PLUGINNAME)
+	cp -vfr $(PY_FILES) $(HOME)/.qgis/python/plugins/$(PLUGINNAME)
+	cp -vfr $(UI_FILES) $(HOME)/.qgis/python/plugins/$(PLUGINNAME)
+	cp -vfr $(RESOURCE_FILES) $(HOME)/.qgis/python/plugins/$(PLUGINNAME)
+	cp -vfr $(EXTRAS) $(HOME)/.qgis/python/plugins/$(PLUGINNAME)
 	cp -vfr i18n $(HOME)/.qgis/python/plugins/$(PLUGINNAME)
 	cp -vfr $(HELP) $(HOME)/.qgis/python/plugins/$(PLUGINNAME)/help
+	cp -vfr $(PARSERS) $(HOME)/.qgis/python/plugins/$(PLUGINNAME)
 
 # The dclean target removes compiled python files from plugin directory
 # also delets any .svn entry

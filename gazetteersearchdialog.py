@@ -33,14 +33,17 @@ class gazetteerSearchDialog(QtGui.QDialog):
         # Set up the user interface from Designer.
         self.ui = Ui_gazetteerSearch()
         self.ui.setupUi(self)
-        self.ui.searchButton.pressed.connect(self._doSearch)
+        self.ui.goButton.pressed.connect(self._doSearch)
     
     def addGazetter(self, gazetter):
-        self.ui.comboBox.addItem(gazetter)
+        self.ui.gazzetterCombo.addItem(gazetter)
         
     def addResult(self, name):
-        self.ui.listWidget.addItem(QtGui.QListWidgetItem(name))
+        self.ui.resultsList.addItem(QtGui.QListWidgetItem(name))
+
+    def clearResults(self):
+        self.ui.resultsList.clear()
         
     def _doSearch(self):
-        self.runSearch.emit(self.ui.lineEdit.text())
+        self.runSearch.emit(self.ui.searchEdit.text())
         

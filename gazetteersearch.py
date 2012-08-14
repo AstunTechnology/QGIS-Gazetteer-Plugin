@@ -23,11 +23,12 @@
 from PyQt4.QtCore import QFileInfo, QSettings, QTranslator, QCoreApplication, Qt
 from PyQt4.QtGui import QDockWidget, QIcon, QAction
 from gazetteersearchdialog import gazetteerSearchDialog
-from qgis.core import QgsApplication
 import resources_rc
-from parsers.astun import AstunJson
+from qgis.core import QgsApplication
 from urllib2 import urlopen
 from urllib import urlencode
+
+from parsers.astun import AstunJson
 
 class gazetteerSearch:
 
@@ -83,7 +84,8 @@ class gazetteerSearch:
             self.dock.show()
             
     def runSearch(self, searchString):
-        url, data = self.astun.getUrlAndData(5)
+        self.widget.clearResults()
+        url, data = self.astun.getUrlAndData(searchString)
         params = urlencode(data)
         data = urlopen(url + "?" + params).read()
         results = self.astun.parseURLResults(data)
