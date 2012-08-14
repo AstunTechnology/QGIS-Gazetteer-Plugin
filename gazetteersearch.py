@@ -25,15 +25,20 @@ from PyQt4.QtGui import QDockWidget, QIcon, QAction
 from gazetteersearchdialog import gazetteerSearchDialog
 from qgis.core import QgsApplication
 import resources_rc
+from parsers.astun import AstunJson
+from urllib2 import urlopen
+from urllib import urlencode
 
 class gazetteerSearch:
 
     def __init__(self, iface):
-        self.dock = None 
+        self.dock = None
+        self.astun = AstunJson()
         # Save reference to the QGIS interface
         self.iface = iface
         # Create the dialog and keep reference
         self.widget = gazetteerSearchDialog()
+        self.widget.runSearch.connect(self.runSearch)
         # initialize plugin directory
         self.plugin_dir = QFileInfo(QgsApplication.qgisUserDbFilePath()).path() + "/python/plugins/gazetteersearch"
         # initialize locale
@@ -73,5 +78,15 @@ class gazetteerSearch:
             self.dock = QDockWidget("Gazzetteer Search", self.iface.mainWindow())
             self.dock.setWidget(self.widget)
             self.iface.addDockWidget(Qt.RightDockWidgetArea, self.dock)
+            self.widget.addGazetter(self.astun.name)
         else:
             self.dock.show()
+            
+    def runSearch(self, searchString):
+        url, data = self.astun.getUrlAndData(5)
+        params = urlencode(data)
+        data = urlopen(url + "?" + params).read()
+        results = self.astun.parseURLResults(data)
+        for res in results:
+            self.widget.addResult(res.description)
+    
