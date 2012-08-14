@@ -28,7 +28,7 @@ from qgis.core import QgsApplication
 from urllib2 import urlopen
 from urllib import urlencode
 
-from parsers.astun import AstunJson
+from gazetteers.astun import AstunJson
 
 class gazetteerSearch:
 
