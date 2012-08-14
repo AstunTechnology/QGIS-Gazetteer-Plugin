@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>gazetteerSearch</class>
- <widget class="QWidget" name="gazetteerSearch">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -37,7 +37,7 @@
     </widget>
    </item>
    <item row="1" column="1">
-    <widget class="QLineEdit" name="lineEdit"/>
+    <widget class="QLineEdit" name="searchEdit"/>
    </item>
    <item row="2" column="0">
     <widget class="QLabel" name="label_2">
@@ -47,7 +47,7 @@
     </widget>
    </item>
    <item row="2" column="1">
-    <widget class="QComboBox" name="comboBox"/>
+    <widget class="QComboBox" name="gazzetterCombo"/>
    </item>
    <item row="3" column="0" colspan="4">
     <widget class="Line" name="line">
@@ -57,10 +57,10 @@
     </widget>
    </item>
    <item row="4" column="0" colspan="4">
-    <widget class="QListWidget" name="listWidget"/>
+    <widget class="QListWidget" name="resultsList"/>
    </item>
    <item row="1" column="2" rowspan="2">
-    <widget class="QPushButton" name="searchButton">
+    <widget class="QPushButton" name="goButton">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>

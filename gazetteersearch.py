@@ -3,8 +3,7 @@
 /***************************************************************************
  gazetteerSearch
                                  A QGIS plugin
- Gazetteer
-Search plugin
+ Gazetteer Search plugin
                               -------------------
         begin                : 2012-07-21
         copyright            : (C) 2012 by Nathan Woodrow
@@ -21,18 +20,16 @@ Search plugin
  ***************************************************************************/
 """
 # Import the PyQt and QGIS libraries
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
-from qgis.core import *
-# Initialize Qt resources from file resources.py
-import resources_rc
-# Import the code for the dialog
+from PyQt4.QtCore import QFileInfo, QSettings, QTranslator, QCoreApplication, Qt
+from PyQt4.QtGui import QDockWidget, QIcon, QAction
 from gazetteersearchdialog import gazetteerSearchDialog
+from qgis.core import QgsApplication
+import resources_rc
 
 class gazetteerSearch:
 
     def __init__(self, iface):
-        self.dock = None
+        self.dock = None 
         # Save reference to the QGIS interface
         self.iface = iface
         # Create the dialog and keep reference

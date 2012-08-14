@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui_gazetteersearch.ui'
 #
-# Created: Sat Jul 21 00:48:30 2012
+# Created: Sat Jul 21 12:40:55 2012
 #      by: PyQt4 UI code generator 4.8.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -23,6 +23,8 @@ class Ui_gazetteerSearch(object):
         self.label_3 = QtGui.QLabel(gazetteerSearch)
         font = QtGui.QFont()
         font.setPointSize(15)
+        font.setWeight(75)
+        font.setBold(True)
         self.label_3.setFont(font)
         self.label_3.setAlignment(QtCore.Qt.AlignCenter)
         self.label_3.setObjectName(_fromUtf8("label_3"))
