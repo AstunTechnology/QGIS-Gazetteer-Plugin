@@ -36,9 +36,9 @@ class AstunJson():
              mapped = dict(zip(columns,item)) 
              result = SearchResult(self.name)
              result.description = mapped['Name']
-             result.x = mapped['X']
-             result.y = mapped['Y']
-             result.zoom = mapped['Zoom']
+             result.x = float(mapped['X'])
+             result.y = float(mapped['Y'])
+             result.zoom = float(mapped['Zoom'])
              yield result
 
 if __name__ == "__main__":

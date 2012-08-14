@@ -24,7 +24,8 @@ from PyQt4.QtCore import QFileInfo, QSettings, QTranslator, QCoreApplication, Qt
 from PyQt4.QtGui import QDockWidget, QIcon, QAction
 from gazetteersearchdialog import gazetteerSearchDialog
 import resources_rc
-from qgis.core import QgsApplication
+from qgis.core import (QgsApplication, QgsMessageLog, QgsCoordinateReferenceSystem,
+                       QgsRectangle, QgsCoordinateTransform)
 from urllib2 import urlopen
 from urllib import urlencode
 
@@ -35,11 +36,13 @@ class gazetteerSearch:
     def __init__(self, iface):
         self.dock = None
         self.astun = AstunJson()
+        self.results = []
         # Save reference to the QGIS interface
         self.iface = iface
         # Create the dialog and keep reference
         self.widget = gazetteerSearchDialog()
         self.widget.runSearch.connect(self.runSearch)
+        self.widget.zoomRequested.connect(self.zoomTo)
         # initialize plugin directory
         self.plugin_dir = QFileInfo(QgsApplication.qgisUserDbFilePath()).path() + "/python/plugins/gazetteersearch"
         # initialize locale
@@ -88,7 +91,21 @@ class gazetteerSearch:
         url, data = self.astun.getUrlAndData(searchString)
         params = urlencode(data)
         data = urlopen(url + "?" + params).read()
-        results = self.astun.parseURLResults(data)
-        for res in results:
+        self.results = list(self.astun.parseURLResults(data))
+        for res in self.results:
             self.widget.addResult(res.description)
-    
+            
+    def zoomTo(self, name):
+        for res in self.results:
+            if res.description == name:
+                dest_crs = self.iface.mapCanvas().mapRenderer().destinationCrs()
+                src_crs = QgsCoordinateReferenceSystem()
+                src_crs.createFromEpsg(27700)
+                transform = QgsCoordinateTransform(src_crs, dest_crs)
+                new = transform.transform(res.x, res.y)
+                x = new.x()
+                y = new.y()
+                self.iface.mapCanvas().setExtent(QgsRectangle(x,y,x,y))
+                self.iface.mapCanvas().zoomScale(res.zoom)
+                self.iface.mapCanvas().refresh()
+                return
