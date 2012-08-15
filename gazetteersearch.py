@@ -26,6 +26,7 @@ from gazetteersearchdialog import gazetteerSearchDialog
 import resources_rc
 from qgis.core import (QgsApplication, QgsMessageLog, QgsCoordinateReferenceSystem,
                        QgsRectangle, QgsCoordinateTransform)
+from qgis.gui import QgsVertexMarker
 from urllib2 import urlopen
 from urllib import urlencode
 
@@ -39,6 +40,13 @@ class gazetteerSearch:
         self.results = []
         # Save reference to the QGIS interface
         self.iface = iface
+        
+        self.marker = QgsVertexMarker(self.iface.mapCanvas())
+        self.marker.setIconSize(20)
+        self.marker.setPenWidth(3)
+        self.marker.setIconType(QgsVertexMarker.ICON_CROSS)
+        self.marker.hide()
+        
         # Create the dialog and keep reference
         self.widget = gazetteerSearchDialog()
         self.widget.runSearch.connect(self.runSearch)
@@ -75,6 +83,7 @@ class gazetteerSearch:
         # Remove the plugin menu item and icon
         self.iface.removePluginMenu(u"&Gazetteer Search",self.action)
         self.iface.removeToolBarIcon(self.action)
+        self.iface.mapCanvas().scene().removeItem(self.marker)
 
     # run method that performs all the real work
     def run(self):
@@ -102,10 +111,12 @@ class gazetteerSearch:
                 src_crs = QgsCoordinateReferenceSystem()
                 src_crs.createFromEpsg(27700)
                 transform = QgsCoordinateTransform(src_crs, dest_crs)
-                new = transform.transform(res.x, res.y)
-                x = new.x()
-                y = new.y()
+                new_point = transform.transform(res.x, res.y)
+                x = new_point.x()
+                y = new_point.y()
                 self.iface.mapCanvas().setExtent(QgsRectangle(x,y,x,y))
                 self.iface.mapCanvas().zoomScale(res.zoom)
                 self.iface.mapCanvas().refresh()
+                self.marker.setCenter(new_point)
+                self.marker.show()
                 return
