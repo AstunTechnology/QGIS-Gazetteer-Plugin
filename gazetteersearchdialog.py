@@ -26,7 +26,7 @@ from ui_gazetteersearch import Ui_gazetteerSearch
 from functools import partial
 # create the dialog for zoom to point
 class gazetteerSearchDialog(QtGui.QDialog):
-    runSearch = QtCore.pyqtSignal(str)
+    runSearch = QtCore.pyqtSignal(str, str)
     zoomRequested = QtCore.pyqtSignal(str)
     
     def __init__(self):
@@ -39,6 +39,9 @@ class gazetteerSearchDialog(QtGui.QDialog):
     
     def addGazetter(self, gazetter):
         self.ui.gazzetterCombo.addItem(gazetter)
+    
+    def selectedGazetteer(self):
+        return self.ui.gazzetterCombo.currentText()
         
     def addResult(self, name):
         item = QtGui.QListWidgetItem(name)
@@ -48,7 +51,7 @@ class gazetteerSearchDialog(QtGui.QDialog):
         self.ui.resultsList.clear()
         
     def _doSearch(self):
-        self.runSearch.emit(self.ui.searchEdit.text())
+        self.runSearch.emit(self.ui.searchEdit.text(), self.selectedGazetteer())
     
     def _zoomTo(self, item):
         self.zoomRequested.emit(item.text())

@@ -23,24 +23,22 @@
 from PyQt4.QtCore import QFileInfo, QSettings, QTranslator, QCoreApplication, Qt
 from PyQt4.QtGui import QDockWidget, QIcon, QAction
 from gazetteersearchdialog import gazetteerSearchDialog
-import resources_rc
 from qgis.core import (QgsApplication, QgsMessageLog, QgsCoordinateReferenceSystem,
                        QgsRectangle, QgsCoordinateTransform)
 from qgis.gui import QgsVertexMarker
-from urllib2 import urlopen
-from urllib import urlencode
 
-from gazetteers.astun import AstunJson
+from importlib import import_module
+from gazetteers import common
+import resources_rc
+
+log = lambda m: QgsMessageLog.logMessage(m,'Gazetteer')
 
 class gazetteerSearch:
-
     def __init__(self, iface):
         self.dock = None
-        self.astun = AstunJson()
         self.results = []
         # Save reference to the QGIS interface
         self.iface = iface
-        
         self.marker = QgsVertexMarker(self.iface.mapCanvas())
         self.marker.setIconSize(20)
         self.marker.setPenWidth(3)
@@ -91,18 +89,26 @@ class gazetteerSearch:
             self.dock = QDockWidget("Gazzetteer Search", self.iface.mainWindow())
             self.dock.setWidget(self.widget)
             self.iface.addDockWidget(Qt.RightDockWidgetArea, self.dock)
-            self.widget.addGazetter(self.astun.name)
+            self.gazetteers = common.getGazetteers()
+            for gazetter in self.gazetteers.iterkeys(): 
+                self.widget.addGazetter(gazetter)
         else:
             self.dock.show()
             
-    def runSearch(self, searchString):
+    def runSearch(self, searchString, selectedGazetteer):
         self.widget.clearResults()
-        url, data = self.astun.getUrlAndData(searchString)
-        params = urlencode(data)
-        data = urlopen(url + "?" + params).read()
-        self.results = list(self.astun.parseURLResults(data))
+        gazetteer_config = self.gazetteers[str(selectedGazetteer)]
+        gazetteer = self.getGazetteerModule(gazetteer_config)
+        params = common.perpareParams(gazetteer.params, searchString)
+        data = common.search(gazetteer.url, params)
+        self.results = list(gazetteer.parseRequestResults(data))
         for res in self.results:
             self.widget.addResult(res.description)
+            
+    def getGazetteerModule(self, config):
+        gazetteer_module = config['gazetteer']    
+        imported_gazetteer = import_module('gazetteersearch.gazetteers.%s' % gazetteer_module)
+        return imported_gazetteer
             
     def zoomTo(self, name):
         for res in self.results:
@@ -120,3 +126,4 @@ class gazetteerSearch:
                 self.marker.setCenter(new_point)
                 self.marker.show()
                 return
+            

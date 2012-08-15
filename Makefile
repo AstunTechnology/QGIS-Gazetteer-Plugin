@@ -23,7 +23,7 @@ PLUGIN_UPLOAD = $(CURDIR)/plugin_upload.py
 # Makefile for a PyQGIS plugin 
 
 # translation
-SOURCES = gazetteersearch.py ui_gazetteersearch.py __init__.py gazetteersearchdialog.py parsers/__init__.py parsers/astun.py
+SOURCES = gazetteersearch.py ui_gazetteersearch.py __init__.py gazetteersearchdialog.py gazetteers
 #TRANSLATIONS = i18n/gazetteersearch_en.ts
 TRANSLATIONS = 
 
@@ -31,9 +31,9 @@ TRANSLATIONS =
 
 PLUGINNAME = gazetteersearch
 
-PY_FILES = gazetteersearch.py gazetteersearchdialog.py __init__.py gazetter.py gazetteers
+PY_FILES = gazetteersearch.py gazetteersearchdialog.py __init__.py gazetteers
 
-EXTRAS = icon.png metadata.txt config.ini
+EXTRAS = icon.png metadata.txt
 
 UI_FILES = ui_gazetteersearch.py
 
