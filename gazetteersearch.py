@@ -100,6 +100,8 @@ class gazetteerSearch:
         gazetteer_config = self.gazetteers[str(selectedGazetteer)]
         gazetteer = self.getGazetteerModule(gazetteer_config)
         params = common.perpareParams(gazetteer.params, searchString)
+        log(params)
+        log(gazetteer.url)
         data = common.search(gazetteer.url, params)
         self.results = list(gazetteer.parseRequestResults(data))
         for res in self.results:

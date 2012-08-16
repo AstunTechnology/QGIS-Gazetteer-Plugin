@@ -26,5 +26,3 @@ def parseRequestResults(data):
          result.zoom = float(mapped['Zoom'])
          result.epsg = 27700 
          yield result
-    
-    
