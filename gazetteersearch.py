@@ -116,7 +116,7 @@ class gazetteerSearch:
             
     def zoomTo(self, name):
         for res in self.results:
-            if res.description == name:
+            if unicode(res.description) == unicode(name):
                 dest_crs = self.iface.mapCanvas().mapRenderer().destinationCrs()
                 src_crs = QgsCoordinateReferenceSystem()
                 src_crs.createFromEpsg(27700)
