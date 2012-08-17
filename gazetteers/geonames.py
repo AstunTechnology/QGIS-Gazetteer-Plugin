@@ -15,10 +15,10 @@ def parseRequestResults(data):
     for item in tree.findall('geoname'):
         result = namedtuple('Result',['description','x','y','zoom', 'epsg'])
         result.description = item.find('name').text
-        result.x = float(item.find('lat').text)
-        result.y = float(item.find('lng').text)
-        result.zoom = 200
-        result.epsg = 27700 
+        result.x = float(item.find('lng').text)
+        result.y = float(item.find('lat').text)
+        result.zoom = 50000
+        result.epsg = 4326 
         yield result
          
 if __name__ == '__main__':

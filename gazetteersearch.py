@@ -119,7 +119,7 @@ class gazetteerSearch:
             if unicode(res.description) == unicode(name):
                 dest_crs = self.iface.mapCanvas().mapRenderer().destinationCrs()
                 src_crs = QgsCoordinateReferenceSystem()
-                src_crs.createFromEpsg(27700)
+                src_crs.createFromEpsg(res.epsg)
                 transform = QgsCoordinateTransform(src_crs, dest_crs)
                 new_point = transform.transform(res.x, res.y)
                 x = new_point.x()
