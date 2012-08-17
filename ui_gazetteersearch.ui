@@ -42,7 +42,7 @@
    <item row="2" column="0">
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>Gazzetter:</string>
+      <string>Gazetteer:</string>
      </property>
     </widget>
    </item>
@@ -80,5 +80,22 @@
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>searchEdit</sender>
+   <signal>returnPressed()</signal>
+   <receiver>goButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>271</x>
+     <y>52</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>331</x>
+     <y>64</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

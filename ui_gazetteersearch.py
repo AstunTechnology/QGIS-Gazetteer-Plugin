@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui_gazetteersearch.ui'
 #
-# Created: Tue Aug 14 17:52:58 2012
+# Created: Fri Aug 17 09:48:35 2012
 #      by: PyQt4 UI code generator 4.8.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -60,12 +60,13 @@ class Ui_gazetteerSearch(object):
         self.gridLayout.addWidget(self.goButton, 1, 2, 2, 1)
 
         self.retranslateUi(gazetteerSearch)
+        QtCore.QObject.connect(self.searchEdit, QtCore.SIGNAL(_fromUtf8("returnPressed()")), self.goButton.click)
         QtCore.QMetaObject.connectSlotsByName(gazetteerSearch)
 
     def retranslateUi(self, gazetteerSearch):
         gazetteerSearch.setWindowTitle(QtGui.QApplication.translate("gazetteerSearch", "Form", None, QtGui.QApplication.UnicodeUTF8))
         self.label_3.setText(QtGui.QApplication.translate("gazetteerSearch", "Where would you like to go today?", None, QtGui.QApplication.UnicodeUTF8))
         self.label.setText(QtGui.QApplication.translate("gazetteerSearch", "Search for:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_2.setText(QtGui.QApplication.translate("gazetteerSearch", "Gazzetter:", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_2.setText(QtGui.QApplication.translate("gazetteerSearch", "Gazetteer:", None, QtGui.QApplication.UnicodeUTF8))
         self.goButton.setText(QtGui.QApplication.translate("gazetteerSearch", "Go!", None, QtGui.QApplication.UnicodeUTF8))
 

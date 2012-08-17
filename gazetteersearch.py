@@ -86,7 +86,7 @@ class gazetteerSearch:
     # run method that performs all the real work
     def run(self):
         if not self.dock:
-            self.dock = QDockWidget("Gazzetteer Search", self.iface.mainWindow())
+            self.dock = QDockWidget("Gazetteer Search", self.iface.mainWindow())
             self.dock.setWidget(self.widget)
             self.iface.addDockWidget(Qt.RightDockWidgetArea, self.dock)
             self.gazetteers = common.getGazetteers()
