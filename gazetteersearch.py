@@ -20,12 +20,13 @@
  ***************************************************************************/
 """
 # Import the PyQt and QGIS libraries
-from PyQt4.QtCore import QFileInfo, QSettings, QTranslator, QCoreApplication, Qt
-from PyQt4.QtGui import QDockWidget, QIcon, QAction
+from PyQt4.QtCore import (QFileInfo, QSettings, QTranslator, 
+                          QCoreApplication, Qt, QSizeF)
+from PyQt4.QtGui import QDockWidget, QIcon, QAction, QTextDocument, QColor
 from gazetteersearchdialog import gazetteerSearchDialog
 from qgis.core import (QgsApplication, QgsMessageLog, QgsCoordinateReferenceSystem,
                        QgsRectangle, QgsCoordinateTransform)
-from qgis.gui import QgsVertexMarker
+from qgis.gui import QgsTextAnnotationItem
 
 from importlib import import_module
 from gazetteers import common
@@ -39,10 +40,12 @@ class gazetteerSearch:
         self.results = []
         # Save reference to the QGIS interface
         self.iface = iface
-        self.marker = QgsVertexMarker(self.iface.mapCanvas())
-        self.marker.setIconSize(20)
-        self.marker.setPenWidth(3)
-        self.marker.setIconType(QgsVertexMarker.ICON_CROSS)
+        self.marker = QgsTextAnnotationItem(self.iface.mapCanvas())
+        self.marker.setMapPositionFixed(True)
+        self.marker.setFrameSize(QSizeF(200, 100))
+        self.marker.setFrameBackgroundColor(QColor(255,219,110,150))
+        self.marker.setFrameColor(QColor(255, 218,84,250))
+        self.marker.setFrameBorderWidth(2)
         self.marker.hide()
         
         # Create the dialog and keep reference
@@ -81,7 +84,6 @@ class gazetteerSearch:
         # Remove the plugin menu item and icon
         self.iface.removePluginMenu(u"&Gazetteer Search",self.action)
         self.iface.removeToolBarIcon(self.action)
-        self.iface.mapCanvas().scene().removeItem(self.marker)
 
     # run method that performs all the real work
     def run(self):
@@ -125,7 +127,10 @@ class gazetteerSearch:
                 self.iface.mapCanvas().setExtent(QgsRectangle(x,y,x,y))
                 self.iface.mapCanvas().zoomScale(res.zoom)
                 self.iface.mapCanvas().refresh()
-                self.marker.setCenter(new_point)
+                self.marker.setMapPosition(new_point)
+                doc = QTextDocument()
+                doc.setHtml('<p align=center>%s</p>' % res.description)
+                self.marker.setDocument(doc)
                 self.marker.show()
                 return
             

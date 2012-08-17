@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui_gazetteersearch.ui'
 #
-# Created: Fri Aug 17 09:48:35 2012
+# Created: Fri Aug 17 10:11:22 2012
 #      by: PyQt4 UI code generator 4.8.3
 #
 # WARNING! All changes made in this file will be lost!
