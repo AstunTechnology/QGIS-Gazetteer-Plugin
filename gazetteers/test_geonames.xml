@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<geonames style="SHORT">
+<totalResultsCount>5094</totalResultsCount>
+<geoname>
+<toponymName>London</toponymName>
+<name>Londres</name>
+<lat>51.50853</lat>
+<lng>-0.12574</lng>
+<geonameId>2643743</geonameId>
+<countryCode>GB</countryCode>
+<fcl>P</fcl>
+<fcode>PPLC</fcode>
+</geoname>
+<geoname>
+<toponymName>London</toponymName>
+<name>London</name>
+<lat>42.98339</lat>
+<lng>-81.23304</lng>
+<geonameId>6058560</geonameId>
+<countryCode>CA</countryCode>
+<fcl>P</fcl>
+<fcode>PPL</fcode>
+</geoname>
+<geoname>
+<toponymName>City of London</toponymName>
+<name>City of London</name>
+<lat>51.51279</lat>
+<lng>-0.09184</lng>
+<geonameId>2643741</geonameId>
+<countryCode>GB</countryCode>
+<fcl>P</fcl>
+<fcode>PPLA3</fcode>
+</geoname>
+<geoname>
+<toponymName>East London</toponymName>
+<name>East London</name>
+<lat>-33.01529</lat>
+<lng>27.91162</lng>
+<geonameId>1006984</geonameId>
+<countryCode>ZA</countryCode>
+<fcl>P</fcl>
+<fcode>PPLA2</fcode>
+</geoname>
+<geoname>
+<toponymName>New London</toponymName>
+<name>New London</name>
+<lat>41.35565</lat>
+<lng>-72.09952</lng>
+<geonameId>4839416</geonameId>
+<countryCode>US</countryCode>
+<fcl>P</fcl>
+<fcode>PPL</fcode>
+</geoname>
+<geoname>
+<toponymName>London City Airport</toponymName>
+<name>Aeropuerto de la Ciudad de Londres</name>
+<lat>51.50528</lat>
+<lng>0.05528</lng>
+<geonameId>6296599</geonameId>
+<countryCode>GB</countryCode>
+<fcl>S</fcl>
+<fcode>AIRP</fcode>
+</geoname>
+<geoname>
+<toponymName>Sutton</toponymName>
+<name>Sutton</name>
+<lat>51.35</lat>
+<lng>-0.2</lng>
+<geonameId>2636503</geonameId>
+<countryCode>GB</countryCode>
+<fcl>P</fcl>
+<fcode>PPLA3</fcode>
+</geoname>
+<geoname>
+<toponymName>London Heathrow Airport</toponymName>
+<name>Heathrow</name>
+<lat>51.47115</lat>
+<lng>-0.45649</lng>
+<geonameId>2647216</geonameId>
+<countryCode>GB</countryCode>
+<fcl>S</fcl>
+<fcode>AIRP</fcode>
+</geoname>
+<geoname>
+<toponymName>Town of New London</toponymName>
+<name>Town of New London</name>
+<lat>41.32982</lat>
+<lng>-72.09452</lng>
+<geonameId>4839433</geonameId>
+<countryCode>US</countryCode>
+<fcl>A</fcl>
+<fcode>ADMD</fcode>
+</geoname>
+<geoname>
+<toponymName>City of New London</toponymName>
+<name>City of New London</name>
+<lat>41.3327</lat>
+<lng>-72.09638</lng>
+<geonameId>7316471</geonameId>
+<countryCode>US</countryCode>
+<fcl>A</fcl>
+<fcode>ADMD</fcode>
+</geoname>
+</geonames>
