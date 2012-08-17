@@ -23,15 +23,14 @@ Search plugin
 
 from PyQt4 import QtCore, QtGui
 from ui_gazetteersearch import Ui_gazetteerSearch
-from functools import partial
-# create the dialog for zoom to point
+import resources_rc
+
 class gazetteerSearchDialog(QtGui.QDialog):
     runSearch = QtCore.pyqtSignal(str, str)
     zoomRequested = QtCore.pyqtSignal(str)
     
     def __init__(self):
         QtGui.QDialog.__init__(self)
-        # Set up the user interface from Designer.
         self.ui = Ui_gazetteerSearch()
         self.ui.setupUi(self)
         self.ui.goButton.pressed.connect(self._doSearch)
@@ -44,15 +43,28 @@ class gazetteerSearchDialog(QtGui.QDialog):
         return self.ui.gazzetterCombo.currentText()
         
     def addResult(self, name):
+        self.hasErrors = False
         item = QtGui.QListWidgetItem(name)
         self.ui.resultsList.addItem(item)
 
     def clearResults(self):
+        self.hasErrors = False
         self.ui.resultsList.clear()
         
     def _doSearch(self):
+        self.clearResults()
         self.runSearch.emit(self.ui.searchEdit.text(), self.selectedGazetteer())
     
     def _zoomTo(self, item):
-        self.zoomRequested.emit(item.text())
-        
+        if self.hasErrors:
+            return
+        else:
+            self.zoomRequested.emit(item.text())
+     
+    def addError(self, text):
+        self.hasErrors = True
+        item = QtGui.QListWidgetItem(text)
+        item.setIcon(QtGui.QIcon(":/plugins/gazetteersearch/warning.png"))
+        item.setTextAlignment(QtCore.Qt.AlignHCenter | QtCore.Qt.AlignVCenter )
+        item.setForeground(QtCore.Qt.red)
+        self.ui.resultsList.addItem(item)   

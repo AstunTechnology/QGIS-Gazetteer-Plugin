@@ -40,7 +40,8 @@ class gazetteerSearch:
         self.results = []
         # Save reference to the QGIS interface
         self.iface = iface
-        self.marker = QgsTextAnnotationItem(self.iface.mapCanvas())
+        self.canvas = self.iface.mapCanvas()
+        self.marker = QgsTextAnnotationItem(self.canvas)
         self.marker.setMapPositionFixed(True)
         self.marker.setFrameSize(QSizeF(200, 100))
         self.marker.setFrameBackgroundColor(QColor(255,219,110,150))
@@ -98,14 +99,19 @@ class gazetteerSearch:
             self.dock.show()
             
     def runSearch(self, searchString, selectedGazetteer):
-        self.widget.clearResults()
         gazetteer_config = self.gazetteers[str(selectedGazetteer)]
         gazetteer = self.getGazetteerModule(gazetteer_config)
         params = common.perpareParams(gazetteer.params, searchString)
-        log(params)
-        log(gazetteer.url)
         data = common.search(gazetteer.url, params)
-        self.results = list(gazetteer.parseRequestResults(data))
+        
+        try:
+            self.results = list(gazetteer.parseRequestResults(data))
+        except ValueError:
+            self.results = []
+            
+        if len(self.results) == 0:
+            self.widget.addError('No results found for "%s"' % searchString)
+            
         for res in self.results:
             self.widget.addResult(res.description)
             
@@ -117,16 +123,16 @@ class gazetteerSearch:
     def zoomTo(self, name):
         for res in self.results:
             if unicode(res.description) == unicode(name):
-                dest_crs = self.iface.mapCanvas().mapRenderer().destinationCrs()
+                dest_crs = self.canvas.mapRenderer().destinationCrs()
                 src_crs = QgsCoordinateReferenceSystem()
                 src_crs.createFromEpsg(res.epsg)
                 transform = QgsCoordinateTransform(src_crs, dest_crs)
                 new_point = transform.transform(res.x, res.y)
                 x = new_point.x()
                 y = new_point.y()
-                self.iface.mapCanvas().setExtent(QgsRectangle(x,y,x,y))
-                self.iface.mapCanvas().zoomScale(res.zoom)
-                self.iface.mapCanvas().refresh()
+                self.canvas.setExtent(QgsRectangle(x,y,x,y))
+                self.canvas.zoomScale(res.zoom)
+                self.canvas.refresh()
                 self.marker.setMapPosition(new_point)
                 doc = QTextDocument()
                 doc.setHtml('<p align=center>%s</p>' % res.description)
