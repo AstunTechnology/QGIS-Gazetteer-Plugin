@@ -10,7 +10,7 @@ params = {
             'mapsource': 'Workshop/MyHouse',
             '_': '1344265603168',
             'location': '##searchstring##',
-            'pagesize': '6',
+            'pagesize': '30',
             'startnum': '1',
           }
     
