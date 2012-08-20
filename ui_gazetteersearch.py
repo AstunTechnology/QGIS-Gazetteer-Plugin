@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui_gazetteersearch.ui'
 #
-# Created: Mon Aug 20 06:39:41 2012
+# Created: Mon Aug 20 21:49:16 2012
 #      by: PyQt4 UI code generator 4.8.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -57,7 +57,12 @@ class Ui_gazetteerSearch(object):
         font.setPointSize(9)
         self.goButton.setFont(font)
         self.goButton.setObjectName(_fromUtf8("goButton"))
-        self.gridLayout.addWidget(self.goButton, 1, 2, 2, 1)
+        self.gridLayout.addWidget(self.goButton, 1, 3, 1, 1)
+        self.clearButton = QtGui.QPushButton(gazetteerSearch)
+        self.clearButton.setCheckable(False)
+        self.clearButton.setAutoRepeat(False)
+        self.clearButton.setObjectName(_fromUtf8("clearButton"))
+        self.gridLayout.addWidget(self.clearButton, 2, 3, 1, 1)
 
         self.retranslateUi(gazetteerSearch)
         QtCore.QObject.connect(self.searchEdit, QtCore.SIGNAL(_fromUtf8("returnPressed()")), self.goButton.click)
@@ -69,4 +74,5 @@ class Ui_gazetteerSearch(object):
         self.label.setText(QtGui.QApplication.translate("gazetteerSearch", "Search for:", None, QtGui.QApplication.UnicodeUTF8))
         self.label_2.setText(QtGui.QApplication.translate("gazetteerSearch", "Gazetteer:", None, QtGui.QApplication.UnicodeUTF8))
         self.goButton.setText(QtGui.QApplication.translate("gazetteerSearch", "Go!", None, QtGui.QApplication.UnicodeUTF8))
+        self.clearButton.setText(QtGui.QApplication.translate("gazetteerSearch", "Clear", None, QtGui.QApplication.UnicodeUTF8))
 

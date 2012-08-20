@@ -26,7 +26,7 @@ from PyQt4.QtGui import QDockWidget, QIcon, QAction, QTextDocument, QColor
 from gazetteersearchdialog import gazetteerSearchDialog
 from qgis.core import (QgsApplication, QgsMessageLog, QgsCoordinateReferenceSystem,
                        QgsRectangle, QgsCoordinateTransform)
-from qgis.gui import QgsTextAnnotationItem
+from qgis.gui import QgsVertexMarker, QgsAnnotationItem
 
 from importlib import import_module
 from gazetteers import common
@@ -40,18 +40,19 @@ class gazetteerSearch:
         self.results = []
         # Save reference to the QGIS interface
         self.iface = iface
+        self.iface.newProjectCreated.connect(self._hideMarker)
+        self.iface.projectRead.connect(self._hideMarker)
         self.canvas = self.iface.mapCanvas()
-        self.marker = QgsTextAnnotationItem(self.canvas)
-        self.marker.setMapPositionFixed(True)
-        self.marker.setFrameSize(QSizeF(200, 100))
-        self.marker.setFrameBackgroundColor(QColor(255,219,110,150))
-        self.marker.setFrameColor(QColor(255, 218,84,250))
-        self.marker.setFrameBorderWidth(2)
+        self.marker = QgsVertexMarker(self.iface.mapCanvas())
+        self.marker.setIconSize(20)
+        self.marker.setPenWidth(3)
+        self.marker.setIconType(QgsVertexMarker.ICON_CROSS)
         self.marker.hide()
         
         # Create the dialog and keep reference
         self.widget = gazetteerSearchDialog()
         self.widget.runSearch.connect(self.runSearch)
+        self.widget.ui.clearButton.pressed.connect(self.clearResults)
         self.widget.zoomRequested.connect(self.zoomTo)
         # initialize plugin directory
         self.plugin_dir = QFileInfo(QgsApplication.qgisUserDbFilePath()).path() + "/python/plugins/gazetteersearch"
@@ -69,7 +70,6 @@ class gazetteerSearch:
             if qVersion() > '4.3.3':
                 QCoreApplication.installTranslator(self.translator)
    
-
     def initGui(self):
         # Create action that will start plugin configuration
         self.action = QAction(QIcon(":/plugins/gazetteersearch/icon.png"), \
@@ -85,7 +85,12 @@ class gazetteerSearch:
         # Remove the plugin menu item and icon
         self.iface.removePluginMenu(u"&Gazetteer Search",self.action)
         self.iface.removeToolBarIcon(self.action)
-
+        self.iface.mapCanvas().scene().removeItem(self.marker)
+        self.marker = None
+    
+    def _hideMarker(self):
+        self.marker.hide()
+    
     # run method that performs all the real work
     def run(self):
         if not self.dock:
@@ -114,6 +119,10 @@ class gazetteerSearch:
             
         for res in self.results:
             self.widget.addResult(res.description)
+                        
+    def clearResults(self):
+        self.widget.clearResults()
+        self.marker.hide()
             
     def getGazetteerModule(self, config):
         gazetteer_module = config['gazetteer']    
@@ -133,10 +142,6 @@ class gazetteerSearch:
                 self.canvas.setExtent(QgsRectangle(x,y,x,y))
                 self.canvas.zoomScale(res.zoom)
                 self.canvas.refresh()
-                self.marker.setMapPosition(new_point)
-                doc = QTextDocument()
-                doc.setHtml('<p align=center>%s</p>' % res.description)
-                self.marker.setDocument(doc)
+                self.marker.setCenter(new_point)
                 self.marker.show()
                 return
-            
