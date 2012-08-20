@@ -100,6 +100,9 @@ class gazetteerSearch:
             self.gazetteers = common.getGazetteers()
             for gazetter in self.gazetteers.iterkeys(): 
                 self.widget.addGazetter(gazetter)
+                
+            if len(self.gazetteers) == 1:
+                self.widget.hideGazetteers()
         else:
             self.dock.show()
             

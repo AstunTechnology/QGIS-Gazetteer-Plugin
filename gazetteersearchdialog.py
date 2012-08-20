@@ -51,6 +51,10 @@ class gazetteerSearchDialog(QtGui.QDialog):
         self.hasErrors = False
         self.ui.resultsList.clear()
         
+    def hideGazetteers(self):
+        self.ui.gazzetterCombo.hide()
+        self.ui.label_2.hide()
+        
     def _doSearch(self):
         self.clearResults()
         self.runSearch.emit(self.ui.searchEdit.text(), self.selectedGazetteer())
