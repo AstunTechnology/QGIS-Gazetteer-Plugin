@@ -21,6 +21,10 @@ Search plugin
  ***************************************************************************/
  This script initializes the plugin, making it known to QGIS.
 """
+import sys
+import os
+
+
 def name():
     return "Gazetteer Search plugin"
 def description():
@@ -32,6 +36,9 @@ def icon():
 def qgisMinimumVersion():
     return "1.8"
 def classFactory(iface):
-    # load gazetteerSearch class from file gazetteerSearch
+    # Add the directory that this file live in to the start of sys.path
+    # so that imports can be relative and our modules have the highest priority
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    # Load gazetteerSearch class from file gazetteerSearch
     from gazetteersearch import gazetteerSearch
     return gazetteerSearch(iface)

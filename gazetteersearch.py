@@ -129,7 +129,7 @@ class gazetteerSearch:
             
     def getGazetteerModule(self, config):
         gazetteer_module = config['gazetteer']    
-        imported_gazetteer = import_module('gazetteersearch.gazetteers.%s' % gazetteer_module)
+        imported_gazetteer = import_module('gazetteers.%s' % gazetteer_module)
         return imported_gazetteer
             
     def zoomTo(self, name):
