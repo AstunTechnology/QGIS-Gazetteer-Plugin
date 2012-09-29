@@ -1,5 +1,6 @@
 from urllib2 import urlopen
-from urllib import urlencode
+from urllib import urlencode, quote
+from qgis.core import QgsMessageLog
 
 def getGazetteers():
     from ConfigParser import ConfigParser
@@ -14,7 +15,7 @@ def getGazetteers():
             dictionary[section][option] = config.get(section, option)
     return dictionary
 
-def perpareParams(params, query, **kwargs):
+def prepareParams(params, query, **kwargs):
     new_params = params.copy()
     for key, value in params.items():
         if value == "##searchstring##":
@@ -23,5 +24,11 @@ def perpareParams(params, query, **kwargs):
     params = urlencode(new_params)       
     return params
 
-def search(url, params):
-    return urlopen(url + "?" + params).read()
+def prepareURL(url, params, query):
+    params = prepareParams(params, query)
+    newurl = url + "?" + params
+    return newurl.replace("##searchstring##", quote(str(query)))
+    
+def search(url):
+    QgsMessageLog.logMessage("URL:" + url, "Gazetteer")
+    return urlopen(url).read()

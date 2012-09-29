@@ -109,8 +109,8 @@ class gazetteerSearch:
     def runSearch(self, searchString, selectedGazetteer):
         gazetteer_config = self.gazetteers[str(selectedGazetteer)]
         gazetteer = self.getGazetteerModule(gazetteer_config)
-        params = common.perpareParams(gazetteer.params, searchString)
-        data = common.search(gazetteer.url, params)
+        url = common.prepareURL(gazetteer.url, gazetteer.params, searchString)
+        data = common.search(url)
         
         try:
             self.results = list(gazetteer.parseRequestResults(data))
