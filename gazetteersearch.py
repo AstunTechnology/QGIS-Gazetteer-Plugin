@@ -62,11 +62,11 @@ class Result(object):
         if value == True:
             self._active = True
             self.marker.setColor(QColor('red'))
-            self.canvas.setDirty(True)
+            self.marker.updateCanvas()
         else:
             self._active = False
             self.marker.setColor(QColor('green'))
-            self.canvas.setDirty(True)
+            self.marker.updateCanvas()
 
     @property
     def visible(self):
@@ -220,4 +220,3 @@ class gazetteerSearch:
             self.results[self.activeIndex].active = False
         self.results[row-1].active = True
         self.activeIndex = row-1
-        self.canvas.refresh()
