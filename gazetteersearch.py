@@ -62,11 +62,11 @@ class Result(object):
         if value == True:
             self._active = True
             self.marker.setColor(QColor('red'))
-            self.canvas.refresh()
+            self.canvas.setDirty(True)
         else:
             self._active = False
             self.marker.setColor(QColor('green'))
-            self.canvas.refresh()
+            self.canvas.setDirty(True)
 
     @property
     def visible(self):
@@ -101,7 +101,7 @@ class Result(object):
         if self._xtrans is not None and self._ytrans is not None:
             r = QgsRectangle(self._xtrans,self._ytrans,self._xtrans,self._ytrans)
             self.canvas.setExtent(r)
-            self.canvas.zoomScale(zoom)
+            self.canvas.zoomScale(self.zoom)
             self.canvas.refresh()
         else:
             raise ValueError("Point does not have x and y coordinates")
@@ -179,6 +179,7 @@ class gazetteerSearch:
             self.dock.show()
             
     def runSearch(self, searchString, selectedGazetteer):
+        self.clearResults()
         gazetteer_config = self.gazetteers[str(selectedGazetteer)]
         gazetteer = self.getGazetteerModule(gazetteer_config)
         url = common.prepareURL(gazetteer.url, gazetteer.params, searchString)
@@ -195,14 +196,16 @@ class gazetteerSearch:
         for res in results:
             r = Result(self.iface, res.description, res.x, res.y, res.zoom, res.epsg)
             self.widget.addResult(r.description)
-            r.index = self.widget.getListCount()
+            r.index = self.widget.getListCount()-1
             r.visible = True
             self.results.append(r)
                         
     def clearResults(self):
         self.widget.clearResults()
         for res in self.results:
-            res.visible = False
+            res.unload()
+        self.results = []
+        self.activeIndex=None
             
     def getGazetteerModule(self, config):
         gazetteer_module = config['gazetteer']    
@@ -210,13 +213,11 @@ class gazetteerSearch:
         return imported_gazetteer
             
     def zoomTo(self, row):
-        for res in self.results:
-            if res.index == row:
-                res.zoomTo()
-                return
+        self.results[row-1].zoomTo()
 
     def changeSelected(self, row):
         if self.activeIndex is not None:
             self.results[self.activeIndex].active = False
-        self.results[row].active = True
-        self.activeIndex = row
+        self.results[row-1].active = True
+        self.activeIndex = row-1
+        self.canvas.refresh()
