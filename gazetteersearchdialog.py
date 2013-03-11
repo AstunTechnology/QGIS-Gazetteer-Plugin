@@ -27,7 +27,8 @@ import resources_rc
 
 class gazetteerSearchDialog(QtGui.QDialog):
     runSearch = QtCore.pyqtSignal(str, str)
-    zoomRequested = QtCore.pyqtSignal(str)
+    zoomRequested = QtCore.pyqtSignal(int)
+    changeRequested = QtCore.pyqtSignal(int)
     
     def __init__(self):
         QtGui.QDialog.__init__(self)
@@ -35,6 +36,7 @@ class gazetteerSearchDialog(QtGui.QDialog):
         self.ui.setupUi(self)
         self.ui.goButton.pressed.connect(self._doSearch)
         self.ui.resultsList.itemActivated.connect(self._zoomTo)
+        self.ui.resultsList.currentItemChanged.connect(self._itemChanged)
     
     def addGazetter(self, gazetter):
         self.ui.gazzetterCombo.addItem(gazetter)
@@ -46,6 +48,12 @@ class gazetteerSearchDialog(QtGui.QDialog):
         self.hasErrors = False
         item = QtGui.QListWidgetItem(name)
         self.ui.resultsList.addItem(item)
+
+    def getListCount(self):
+        return self.ui.resultsList.count()
+
+    def getListIndex(self):
+        return self.ui.resultsList.currentRow()
 
     def clearResults(self):
         self.hasErrors = False
@@ -63,7 +71,13 @@ class gazetteerSearchDialog(QtGui.QDialog):
         if self.hasErrors:
             return
         else:
-            self.zoomRequested.emit(item.text())
+            self.zoomRequested.emit(self.ui.resultsList.currentRow())
+
+    def _itemChanged(self,currentItem,previousItem):
+        if self.hasErrors:
+            return
+        else:
+            self.changeRequested.emit(self.ui.resultsList.currentRow())
      
     def addError(self, text):
         self.hasErrors = True

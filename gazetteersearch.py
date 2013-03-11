@@ -34,26 +34,97 @@ import resources_rc
 
 log = lambda m: QgsMessageLog.logMessage(m,'Gazetteer')
 
+class Result(object):
+    def __init__(self,iface,description=None,x=None,y=None,zoom=None,epsg=None):
+        self.iface = iface
+        self.canvas = self.iface.mapCanvas()
+        self.description = str(description)
+        self.x = float(x)
+        self.y = float(y)
+        self.zoom = int(zoom)
+        self.epsg = int(epsg)
+        self.marker = QgsVertexMarker(self.canvas)
+        self.marker.setIconSize(20)
+        self.marker.setPenWidth(3)
+        self.marker.setIconType(QgsVertexMarker.ICON_CROSS)
+        self.marker.setColor(QColor('green'))
+        self._active = False
+        self._visible = False
+        self._xtrans = None
+        self._ytrans = None
+
+    @property
+    def active(self):
+        return self._active
+
+    @active.setter
+    def active(self,value):
+        if value == True:
+            self._active = True
+            self.marker.setColor(QColor('red'))
+            self.canvas.refresh()
+        else:
+            self._active = False
+            self.marker.setColor(QColor('green'))
+            self.canvas.refresh()
+
+    @property
+    def visible(self):
+        return self._visible
+
+    @visible.setter
+    def visible(self,value):
+        if value == True:
+            if self.x is not None and self.y is not None:
+                self._visible = True
+                dest_crs = self.canvas.mapRenderer().destinationCrs()
+                src_crs = QgsCoordinateReferenceSystem()
+                src_crs.createFromEpsg(self.epsg)
+                transform = QgsCoordinateTransform(src_crs, dest_crs)
+                new_point = transform.transform(self.x, self.y)
+                self._xtrans = new_point.x()
+                self._ytrans = new_point.y()
+                self.marker.setCenter(new_point)
+                self.marker.show()
+            else:
+                self._visible = False
+                raise ValueError("Can't show marker without x and y coordinates.")
+        else:
+            self._visible = False
+            self.marker.hide()
+
+    def unload(self):
+        self.canvas.scene().removeItem(self.marker)
+        self.marker = None
+
+    def zoomTo(self):
+        if self._xtrans is not None and self._ytrans is not None:
+            r = QgsRectangle(self._xtrans,self._ytrans,self._xtrans,self._ytrans)
+            self.canvas.setExtent(r)
+            self.canvas.zoomScale(zoom)
+            self.canvas.refresh()
+        else:
+            raise ValueError("Point does not have x and y coordinates")
+
+
+
 class gazetteerSearch:
     def __init__(self, iface):
         self.dock = None
         self.results = []
+        self.activeIndex = None
         # Save reference to the QGIS interface
         self.iface = iface
         self.iface.newProjectCreated.connect(self._hideMarker)
         self.iface.projectRead.connect(self._hideMarker)
         self.canvas = self.iface.mapCanvas()
-        self.marker = QgsVertexMarker(self.iface.mapCanvas())
-        self.marker.setIconSize(20)
-        self.marker.setPenWidth(3)
-        self.marker.setIconType(QgsVertexMarker.ICON_CROSS)
-        self.marker.hide()
         
         # Create the dialog and keep reference
         self.widget = gazetteerSearchDialog()
         self.widget.runSearch.connect(self.runSearch)
         self.widget.ui.clearButton.pressed.connect(self.clearResults)
         self.widget.zoomRequested.connect(self.zoomTo)
+        self.widget.changeRequested.connect(self.changeSelected)
         # initialize plugin directory
         self.plugin_dir = QFileInfo(QgsApplication.qgisUserDbFilePath()).path() + "/python/plugins/gazetteersearch"
         # initialize locale
@@ -85,11 +156,12 @@ class gazetteerSearch:
         # Remove the plugin menu item and icon
         self.iface.removePluginMenu(u"&Gazetteer Search",self.action)
         self.iface.removeToolBarIcon(self.action)
-        self.iface.mapCanvas().scene().removeItem(self.marker)
-        self.marker = None
+        for res in self.results:
+            res.unload()
     
     def _hideMarker(self):
-        self.marker.hide()
+        for res in self.results:
+            res.visible = False
     
     # run method that performs all the real work
     def run(self):
@@ -113,38 +185,38 @@ class gazetteerSearch:
         data = common.search(url)
         
         try:
-            self.results = list(gazetteer.parseRequestResults(data))
+            results = list(gazetteer.parseRequestResults(data))
         except ValueError:
             self.results = []
             
-        if len(self.results) == 0:
+        if len(results) == 0:
             self.widget.addError('No results found for "%s"' % searchString)
             
-        for res in self.results:
-            self.widget.addResult(res.description)
+        for res in results:
+            r = Result(self.iface, res.description, res.x, res.y, res.zoom, res.epsg)
+            self.widget.addResult(r.description)
+            r.index = self.widget.getListCount()
+            r.visible = True
+            self.results.append(r)
                         
     def clearResults(self):
         self.widget.clearResults()
-        self.marker.hide()
+        for res in self.results:
+            res.visible = False
             
     def getGazetteerModule(self, config):
         gazetteer_module = config['gazetteer']    
         imported_gazetteer = import_module('gazetteers.%s' % gazetteer_module)
         return imported_gazetteer
             
-    def zoomTo(self, name):
+    def zoomTo(self, row):
         for res in self.results:
-            if unicode(res.description) == unicode(name):
-                dest_crs = self.canvas.mapRenderer().destinationCrs()
-                src_crs = QgsCoordinateReferenceSystem()
-                src_crs.createFromEpsg(res.epsg)
-                transform = QgsCoordinateTransform(src_crs, dest_crs)
-                new_point = transform.transform(res.x, res.y)
-                x = new_point.x()
-                y = new_point.y()
-                self.canvas.setExtent(QgsRectangle(x,y,x,y))
-                self.canvas.zoomScale(res.zoom)
-                self.canvas.refresh()
-                self.marker.setCenter(new_point)
-                self.marker.show()
+            if res.index == row:
+                res.zoomTo()
                 return
+
+    def changeSelected(self, row):
+        if self.activeIndex is not None:
+            self.results[self.activeIndex].active = False
+        self.results[row].active = True
+        self.activeIndex = row
