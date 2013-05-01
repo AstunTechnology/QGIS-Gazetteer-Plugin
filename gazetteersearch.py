@@ -38,7 +38,7 @@ class Result(object):
     def __init__(self,iface,description=None,x=None,y=None,zoom=None,epsg=None):
         self.iface = iface
         self.canvas = self.iface.mapCanvas()
-        self.description = str(description)
+        self.description = unicode(description)
         self.x = float(x)
         self.y = float(y)
         self.zoom = int(zoom)
