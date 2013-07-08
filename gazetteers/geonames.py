@@ -8,7 +8,7 @@ params = {
           'style': 'LONG',
           'lang': 'en',
           'fuzzy': '0.75',
-          'username': 'rudivs',
+          'username': 'demo',
           'country': ['ZA','SZ','LS','NA','BW','ZW','MZ'],
           'countryBias': 'ZA'
          }
