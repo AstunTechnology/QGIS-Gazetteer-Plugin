@@ -7,8 +7,8 @@
 Search plugin
                              -------------------
         begin                : 2012-07-21
-        copyright            : (C) 2012 by Nathan Woodrow
-        email                : woodrow.nathan@gmail.com
+        copyright            : (C) 2012 by Rudi von Staden, Nathan Woodrow
+        email                : rudivs@gmail.com
  ***************************************************************************/
 
 /***************************************************************************
@@ -26,15 +26,20 @@ import os
 
 
 def name():
-    return "Gazetteer Search plugin"
+    return "Gazetteer"
 def description():
     return "Gazetteer Search plugin"
 def version():
-    return "Version 0.1"
+    return "Version 0.3.1"
 def icon():
-    return "icon.png"
+    return "icon.svg"
 def qgisMinimumVersion():
     return "1.8"
+def author():
+    return "Rudi von Staden"
+def email():
+    return "rudivs@gmail.com"
+
 def classFactory(iface):
     # Add the directory that this file live in to the start of sys.path
     # so that imports can be relative and our modules have the highest priority

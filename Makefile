@@ -33,7 +33,7 @@ PLUGINNAME = gazetteersearch
 
 PY_FILES = gazetteersearch.py gazetteersearchdialog.py __init__.py gazetteers
 
-EXTRAS = icon.png metadata.txt
+EXTRAS = icon.svg icon.png metadata.txt
 
 UI_FILES = ui_gazetteersearch.py
 

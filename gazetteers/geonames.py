@@ -4,10 +4,10 @@ from xml.etree import ElementTree
 url = "http://api.geonames.org/search"
 params = {
           'q':"##searchstring##",
-          'maxRows': '100',
+          'maxRows': '200',
           'style': 'LONG',
           'lang': 'en',
-          'fuzzy': '0.85',
+          'fuzzy': '0.75',
           'username': 'rudivs',
           'country': ['ZA','SZ','LS','NA','BW','ZW','MZ'],
           'countryBias': 'ZA'

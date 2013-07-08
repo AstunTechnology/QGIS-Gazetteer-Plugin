@@ -7,8 +7,8 @@
 Search plugin
                              -------------------
         begin                : 2012-07-21
-        copyright            : (C) 2012 by Nathan Woodrow
-        email                : woodrow.nathan@gmail.com
+        copyright            : (C) 2012,2013 by Nathan Woodrow, Rudi von Staden
+        email                : rudivs@gmail.com
  ***************************************************************************/
 
 /***************************************************************************
@@ -82,7 +82,7 @@ class gazetteerSearchDialog(QtGui.QDialog):
     def addError(self, text):
         self.hasErrors = True
         item = QtGui.QListWidgetItem(text)
-        item.setIcon(QtGui.QIcon(":/plugins/gazetteersearch/warning.png"))
+        item.setIcon(QtGui.QIcon(self.plugin_dir + "/warning.png"))
         item.setTextAlignment(QtCore.Qt.AlignHCenter | QtCore.Qt.AlignVCenter )
         item.setForeground(QtCore.Qt.red)
         self.ui.resultsList.addItem(item)   

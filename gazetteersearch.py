@@ -6,8 +6,8 @@
  Gazetteer Search plugin
                               -------------------
         begin                : 2012-07-21
-        copyright            : (C) 2012 by Nathan Woodrow
-        email                : woodrow.nathan@gmail.com
+        copyright            : (C) 2012,2013 by Nathan Woodrow, Rudi von Staden
+        email                : rudivs@gmail.com
  ***************************************************************************/
 
 /***************************************************************************
@@ -29,6 +29,7 @@ from qgis.core import (QgsApplication, QgsMessageLog, QgsCoordinateReferenceSyst
 from qgis.gui import QgsVertexMarker, QgsAnnotationItem
 
 from importlib import import_module
+from urllib2 import URLError
 from gazetteers import common
 import resources_rc
 
@@ -126,7 +127,8 @@ class gazetteerSearch:
         self.widget.zoomRequested.connect(self.zoomTo)
         self.widget.changeRequested.connect(self.changeSelected)
         # initialize plugin directory
-        self.plugin_dir = QFileInfo(QgsApplication.qgisUserDbFilePath()).path() + "/python/plugins/gazetteersearch"
+        self.plugin_dir = QFileInfo(QgsApplication.qgisUserDbFilePath()).path() + "/python/plugins/SANBI_Gazetteer"
+        self.widget.plugin_dir = self.plugin_dir
         # initialize locale
         localePath = ""
         locale = QSettings().value("locale/userLocale").toString()[0:2]
@@ -143,7 +145,7 @@ class gazetteerSearch:
    
     def initGui(self):
         # Create action that will start plugin configuration
-        self.action = QAction(QIcon(":/plugins/gazetteersearch/icon.png"), \
+        self.action = QAction(QIcon(self.plugin_dir + "/icon.svg"), \
             u"Gazetteer Search", self.iface.mainWindow())
         # connect the action to the run method
         self.action.triggered.connect(self.run)
@@ -183,22 +185,28 @@ class gazetteerSearch:
         gazetteer_config = self.gazetteers[str(selectedGazetteer)]
         gazetteer = self.getGazetteerModule(gazetteer_config)
         url = common.prepareURL(gazetteer.url, gazetteer.params, searchString)
-        data = common.search(url)
         
         try:
-            results = list(gazetteer.parseRequestResults(data))
-        except ValueError:
+            data = common.search(url)
+        except URLError:
             self.results = []
-            
-        if len(results) == 0:
-            self.widget.addError('No results found for "%s"' % searchString)
-            
-        for res in results:
-            r = Result(self.iface, res.description, res.x, res.y, res.zoom, res.epsg)
-            self.widget.addResult(r.description)
-            r.index = self.widget.getListCount()-1
-            r.visible = True
-            self.results.append(r)
+            self.widget.addError('Problem connecting to "%s"' % selectedGazetteer)
+        else:
+            try:
+                results = list(gazetteer.parseRequestResults(data))
+            except ValueError:
+                self.results = []
+                
+            if len(results) == 0:
+                self.widget.addError('No results found for "%s"' % searchString)
+
+            else:
+                for res in results:
+                    r = Result(self.iface, res.description, res.x, res.y, res.zoom, res.epsg)
+                    self.widget.addResult(r.description)
+                    r.index = self.widget.getListCount()-1
+                    r.visible = True
+                    self.results.append(r)
                         
     def clearResults(self):
         self.widget.clearResults()
@@ -208,7 +216,7 @@ class gazetteerSearch:
         self.activeIndex=None
             
     def getGazetteerModule(self, config):
-        gazetteer_module = config['gazetteer']    
+        gazetteer_module = config['gazetteer']
         imported_gazetteer = import_module('gazetteers.%s' % gazetteer_module)
         return imported_gazetteer
             
@@ -218,5 +226,8 @@ class gazetteerSearch:
     def changeSelected(self, row):
         if self.activeIndex is not None:
             self.results[self.activeIndex].active = False
-        self.results[row-1].active = True
-        self.activeIndex = row-1
+        try:
+            self.results[row-1].active = True
+            self.activeIndex = row-1
+        except IndexError:
+            pass
