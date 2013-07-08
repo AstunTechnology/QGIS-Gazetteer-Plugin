@@ -9,10 +9,10 @@
 
 
 [general]
-name=Gazetteer Search plugin
+name=Gazetteer
 qgisMinimumVersion=1.8
 description=Gazetteer Search plugin
-version=0.1
+version=0.3.1
 
 # end of mandatory metadata
 
@@ -27,7 +27,7 @@ tags=
 homepage=
 tracker=
 repository=
-icon=icon.png
+icon=icon.svg
 # experimental flag
 experimental=False
 
@@ -35,5 +35,5 @@ experimental=False
 deprecated=False
 
 # Author contact information
-author=Nathan Woodrow
-email=woodrow.nathan@gmail.com
+author=Rudi von Staden
+email=rudivs@gmail.com

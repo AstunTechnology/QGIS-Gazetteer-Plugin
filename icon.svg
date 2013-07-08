@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   x="0px"
+   y="0px"
+   width="100px"
+   height="100px"
+   viewBox="0 0 100 100"
+   enable-background="new 0 0 100 100"
+   xml:space="preserve"
+   id="svg2"
+   inkscape:version="0.48+devel r12340"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="/home/rudi/personal/programming/python/qgis/plugins/QGIS-Gazetteer-Plugin/icon.png"
+   inkscape:export-xdpi="28.799999"
+   inkscape:export-ydpi="28.799999"><metadata
+   id="metadata16"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs14">
+	
+
+		
+	
+			
+		</defs><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1313"
+   inkscape:window-height="744"
+   id="namedview12"
+   showgrid="false"
+   inkscape:zoom="2.36"
+   inkscape:cx="50"
+   inkscape:cy="50"
+   inkscape:window-x="53"
+   inkscape:window-y="24"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg2" />
+<g
+   id="Captions">
+</g>
+<path
+   style="fill-rule:evenodd;clip-rule:evenodd;fill:#800000"
+   inkscape:connector-curvature="0"
+   id="path10"
+   d="m 64.816,55.141 -0.893,-0.893 c -0.096,-0.096 -0.198,-0.181 -0.298,-0.27 2.301,-3.934 3.625,-8.507 3.625,-13.392 0,-14.677 -11.896,-26.572 -26.572,-26.572 -14.675,0 -26.571,11.896 -26.571,26.572 0,14.673 11.896,26.574 26.571,26.574 4.854,0 9.4,-1.309 13.317,-3.582 0.093,0.105 0.183,0.213 0.283,0.313 l 0.931,0.931 C 56.97,63.738 59.247,62.21 60.702,60.754 62.252,59.205 63.796,56.843 64.816,55.141 z m -24.157,4.003 c -10.25,0 -18.559,-8.309 -18.559,-18.559 0,-10.251 8.309,-18.559 18.559,-18.559 10.25,0 18.558,8.308 18.558,18.559 C 59.217,50.835 50.909,59.144 40.659,59.144 Z M 82.846,73.168 66.623,56.946 c -0.68,1.359 -1.938,3.222 -4.263,5.547 -2.208,2.209 -3.993,3.446 -5.332,4.148 l 16.14,16.142 c 1.402,-1.494 3.3,-3.494 4.768,-4.962 C 79.473,76.285 81.451,74.446 82.846,73.168 z m 1.743,2.361 c -0.828,1.207 -2.142,2.836 -4.249,4.943 -1.983,1.983 -3.549,3.27 -4.732,4.105 2.507,1.118 5.548,0.657 7.605,-1.397 C 85.281,81.11 85.735,78.045 84.589,75.529 Z" />
+<path
+   id="path19"
+   d="m 40.559427,29.419819 c -4.166779,0 -7.544797,3.378018 -7.544797,7.544575 0,0.08932 0.0027,0.180206 0.0067,0.271979 0.02829,0.792548 0.177756,1.553688 0.431915,2.265823 1.609598,5.290781 7.106201,12.192719 7.106201,12.192719 0,0 5.495934,-6.90127 7.105756,-12.192051 0.254604,-0.712135 0.403847,-1.473943 0.431914,-2.266491 0.0045,-0.09177 0.0069,-0.182433 0.0069,-0.271979 C 48.104225,32.797837 44.726207,29.419819 40.559427,29.419819 z m 0,11.239791 c -2.040621,0 -3.695215,-1.654594 -3.695215,-3.695216 0,-2.040399 1.654594,-3.694993 3.695215,-3.694993 2.040845,0 3.695216,1.654594 3.695216,3.694993 C 44.254643,39.005016 42.600272,40.65961 40.559427,40.65961 Z"
+   inkscape:connector-curvature="0"
+   style="fill:#008000" /></svg>

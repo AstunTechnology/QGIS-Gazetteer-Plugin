@@ -19,9 +19,9 @@ def prepareParams(params, query, **kwargs):
     new_params = params.copy()
     for key, value in params.items():
         if value == "##searchstring##":
-            new_params[key] = query
+            new_params[key] = unicode(query)
             
-    params = urlencode(new_params)       
+    params = urlencode(new_params,True)       
     return params
 
 def prepareURL(url, params, query):

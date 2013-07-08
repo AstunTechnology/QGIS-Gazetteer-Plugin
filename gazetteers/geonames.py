@@ -3,18 +3,21 @@ from xml.etree import ElementTree
 
 url = "http://api.geonames.org/search"
 params = {
-            'q': '##searchstring##',
-            'maxRows': '6',
-            'style': 'LONG',
-            'lang':'es',
-            'username':'demo'
-          }
+          'q':"##searchstring##",
+          'maxRows': '200',
+          'style': 'LONG',
+          'lang': 'en',
+          'fuzzy': '0.75',
+          'username': 'demo',
+          'country': ['ZA','SZ','LS','NA','BW','ZW','MZ'],
+          'countryBias': 'ZA'
+         }
     
 def parseRequestResults(data):
     tree = ElementTree.fromstring(data)
     for item in tree.findall('geoname'):
         result = namedtuple('Result',['description','x','y','zoom', 'epsg'])
-        result.description = item.find('name').text
+        result.description = unicode(item.find('name').text)
         result.x = float(item.find('lng').text)
         result.y = float(item.find('lat').text)
         result.zoom = 50000
