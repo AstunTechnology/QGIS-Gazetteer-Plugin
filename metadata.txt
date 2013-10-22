@@ -10,7 +10,7 @@
 
 [general]
 name=Gazetteer Search plugin
-qgisMinimumVersion=1.8
+qgisMinimumVersion=2.0
 description=Gazetteer Search plugin
 version=0.1
 

@@ -25,7 +25,7 @@ from PyQt4.QtCore import (QFileInfo, QSettings, QTranslator,
 from PyQt4.QtGui import QDockWidget, QIcon, QAction, QTextDocument, QColor
 from gazetteersearchdialog import gazetteerSearchDialog
 from qgis.core import (QgsApplication, QgsMessageLog, QgsCoordinateReferenceSystem,
-                       QgsRectangle, QgsCoordinateTransform)
+                       QgsRectangle, QgsPoint, QgsCoordinateTransform)
 from qgis.gui import QgsVertexMarker, QgsAnnotationItem
 
 from importlib import import_module
@@ -55,10 +55,10 @@ class gazetteerSearch:
         self.widget.ui.clearButton.pressed.connect(self.clearResults)
         self.widget.zoomRequested.connect(self.zoomTo)
         # initialize plugin directory
-        self.plugin_dir = QFileInfo(QgsApplication.qgisUserDbFilePath()).path() + "/python/plugins/gazetteersearch"
+        self.plugin_dir = QFileInfo(QgsApplication.qgisUserDbFilePath()).path() + "/python/plugins/QGIS-Gazetteer-Plugin"
         # initialize locale
         localePath = ""
-        locale = QSettings().value("locale/userLocale").toString()[0:2]
+        locale = QSettings().value("locale/userLocale")[0:2]
        
         if QFileInfo(self.plugin_dir).exists():
             localePath = self.plugin_dir + "/i18n/gazetteersearch_" + locale + ".qm"
@@ -128,23 +128,25 @@ class gazetteerSearch:
         self.marker.hide()
             
     def getGazetteerModule(self, config):
-        gazetteer_module = config['gazetteer']    
-        imported_gazetteer = import_module('gazetteers.%s' % gazetteer_module)
+        gazetteer_module = config['gazetteer']   
+        imported_gazetteer = import_module('.%s' % gazetteer_module, 'QGIS-Gazetteer-Plugin.gazetteers') # Needs to be changed to reflect folder structure
         return imported_gazetteer
             
     def zoomTo(self, name):
         for res in self.results:
             if unicode(res.description) == unicode(name):
-                dest_crs = self.canvas.mapRenderer().destinationCrs()
-                src_crs = QgsCoordinateReferenceSystem()
-                src_crs.createFromEpsg(res.epsg)
-                transform = QgsCoordinateTransform(src_crs, dest_crs)
-                new_point = transform.transform(res.x, res.y)
-                x = new_point.x()
-                y = new_point.y()
+#                dest_crs = self.canvas.mapRenderer().destinationCrs()
+#                src_crs = QgsCoordinateReferenceSystem()
+#                src_crs.createFromEpsg(res.epsg)
+#                transform = QgsCoordinateTransform(src_crs, dest_crs)
+#                new_point = transform.transform(res.x, res.y)
+#                x = new_point.x()
+#                y = new_point.y()
+                x = res.x
+                y = res.y
                 self.canvas.setExtent(QgsRectangle(x,y,x,y))
                 self.canvas.zoomScale(res.zoom)
                 self.canvas.refresh()
-                self.marker.setCenter(new_point)
+                self.marker.setCenter(QgsPoint(x,y))
                 self.marker.show()
                 return
