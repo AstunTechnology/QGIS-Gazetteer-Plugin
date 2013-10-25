@@ -11,6 +11,7 @@
 [general]
 name=Gazetteer Search plugin
 qgisMinimumVersion=1.8
+qgisMaximumVersion=2.99
 description=Gazetteer Search plugin
 version=0.1
 

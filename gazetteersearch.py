@@ -24,7 +24,7 @@ from PyQt4.QtCore import (QFileInfo, QSettings, QTranslator,
                           QCoreApplication, Qt, QSizeF)
 from PyQt4.QtGui import QDockWidget, QIcon, QAction, QTextDocument, QColor
 from gazetteersearchdialog import gazetteerSearchDialog
-from qgis.core import (QgsApplication, QgsMessageLog, QgsCoordinateReferenceSystem,
+from qgis.core import (QGis, QgsApplication, QgsMessageLog, QgsCoordinateReferenceSystem,
                        QgsRectangle, QgsCoordinateTransform)
 from qgis.gui import QgsVertexMarker, QgsAnnotationItem
 
@@ -57,9 +57,12 @@ class gazetteerSearch:
         # initialize plugin directory
         self.plugin_dir = QFileInfo(QgsApplication.qgisUserDbFilePath()).path() + "/python/plugins/gazetteersearch"
         # initialize locale
+
         localePath = ""
-        locale = QSettings().value("locale/userLocale").toString()[0:2]
-       
+        if QGis.QGIS_VERSION_INT < 10900:
+            locale = QSettings().value("locale/userLocale").toString()[0:2]
+        else:
+            locale = QSettings().value("locale/userLocale")[0:2]
         if QFileInfo(self.plugin_dir).exists():
             localePath = self.plugin_dir + "/i18n/gazetteersearch_" + locale + ".qm"
 
@@ -69,7 +72,7 @@ class gazetteerSearch:
 
             if qVersion() > '4.3.3':
                 QCoreApplication.installTranslator(self.translator)
-   
+
     def initGui(self):
         # Create action that will start plugin configuration
         self.action = QAction(QIcon(":/plugins/gazetteersearch/icon.png"), \
@@ -136,8 +139,11 @@ class gazetteerSearch:
         for res in self.results:
             if unicode(res.description) == unicode(name):
                 dest_crs = self.canvas.mapRenderer().destinationCrs()
-                src_crs = QgsCoordinateReferenceSystem()
-                src_crs.createFromEpsg(res.epsg)
+                if QGis.QGIS_VERSION_INT < 10900:
+                    src_crs = QgsCoordinateReferenceSystem()
+                    src_crs.createFromEpsg(res.epsg)
+                else:
+                    src_crs = QgsCoordinateReferenceSystem(res.epsg, QgsCoordinateReferenceSystem.EpsgCrsId)
                 transform = QgsCoordinateTransform(src_crs, dest_crs)
                 new_point = transform.transform(res.x, res.y)
                 x = new_point.x()
