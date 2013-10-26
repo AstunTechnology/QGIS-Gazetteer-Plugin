@@ -20,15 +20,15 @@ def prepareParams(params, query, **kwargs):
     for key, value in params.items():
         if value == "##searchstring##":
             new_params[key] = query
-            
-    params = urlencode(new_params)       
+
+    params = urlencode(new_params)
     return params
 
 def prepareURL(url, params, query):
     params = prepareParams(params, query)
     newurl = url + "?" + params
     return newurl.replace("##searchstring##", quote(str(query)))
-    
+
 def search(url):
     QgsMessageLog.logMessage("URL:" + url, "Gazetteer")
     return urlopen(url).read()

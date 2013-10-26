@@ -20,7 +20,7 @@
  ***************************************************************************/
 """
 # Import the PyQt and QGIS libraries
-from PyQt4.QtCore import (QFileInfo, QSettings, QTranslator, 
+from PyQt4.QtCore import (QFileInfo, QSettings, QTranslator,
                           QCoreApplication, Qt, QSizeF)
 from PyQt4.QtGui import QDockWidget, QIcon, QAction, QTextDocument, QColor
 from gazetteersearchdialog import gazetteerSearchDialog
@@ -48,7 +48,7 @@ class gazetteerSearch:
         self.marker.setPenWidth(3)
         self.marker.setIconType(QgsVertexMarker.ICON_CROSS)
         self.marker.hide()
-        
+
         # Create the dialog and keep reference
         self.widget = gazetteerSearchDialog()
         self.widget.runSearch.connect(self.runSearch)
@@ -90,10 +90,10 @@ class gazetteerSearch:
         self.iface.removeToolBarIcon(self.action)
         self.iface.mapCanvas().scene().removeItem(self.marker)
         self.marker = None
-    
+
     def _hideMarker(self):
         self.marker.hide()
-    
+
     # run method that performs all the real work
     def run(self):
         if not self.dock:
@@ -101,40 +101,40 @@ class gazetteerSearch:
             self.dock.setWidget(self.widget)
             self.iface.addDockWidget(Qt.RightDockWidgetArea, self.dock)
             self.gazetteers = common.getGazetteers()
-            for gazetter in self.gazetteers.iterkeys(): 
+            for gazetter in self.gazetteers.iterkeys():
                 self.widget.addGazetter(gazetter)
-                
+
             if len(self.gazetteers) == 1:
                 self.widget.hideGazetteers()
         else:
             self.dock.show()
-            
+
     def runSearch(self, searchString, selectedGazetteer):
         gazetteer_config = self.gazetteers[str(selectedGazetteer)]
         gazetteer = self.getGazetteerModule(gazetteer_config)
         url = common.prepareURL(gazetteer.url, gazetteer.params, searchString)
         data = common.search(url)
-        
+
         try:
             self.results = list(gazetteer.parseRequestResults(data))
         except ValueError:
             self.results = []
-            
+
         if len(self.results) == 0:
             self.widget.addError('No results found for "%s"' % searchString)
-            
+
         for res in self.results:
             self.widget.addResult(res.description)
-                        
+
     def clearResults(self):
         self.widget.clearResults()
         self.marker.hide()
-            
+
     def getGazetteerModule(self, config):
-        gazetteer_module = config['gazetteer']    
+        gazetteer_module = config['gazetteer']
         imported_gazetteer = import_module('gazetteers.%s' % gazetteer_module)
         return imported_gazetteer
-            
+
     def zoomTo(self, name):
         for res in self.results:
             if unicode(res.description) == unicode(name):

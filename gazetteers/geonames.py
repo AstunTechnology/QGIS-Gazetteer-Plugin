@@ -9,7 +9,7 @@ params = {
             'lang':'es',
             'username':'demo'
           }
-    
+
 def parseRequestResults(data):
     tree = ElementTree.fromstring(data)
     for item in tree.findall('geoname'):
@@ -18,9 +18,9 @@ def parseRequestResults(data):
         result.x = float(item.find('lng').text)
         result.y = float(item.find('lat').text)
         result.zoom = 50000
-        result.epsg = 4326 
+        result.epsg = 4326
         yield result
-         
+
 if __name__ == '__main__':
     f = open('test_geonames.xml')
     results = list(parseRequestResults(f.read()))

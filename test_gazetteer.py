@@ -18,7 +18,7 @@ class testGazetteer(TestCase):
         mock.return_value = expected
         gazetteers = gazetter.getGazetteers()
         self.assertListEqual(expected, gazetteers)
-                
+
     def test_search_returns_result_with_correct_name(self):
         result, success = gazetter.search("Hello", "Google")
         self.assertEqual(result.gazetter, "Google")
@@ -28,7 +28,7 @@ class testGazetteer_Intergration(TestCase):
         expected = ['Google', 'Another']
         gazetteers = gazetter.getGazetteers()
         self.assertListEqual(expected, gazetteers)
- 
+
 if __name__ == "__main__":
     main()
 
