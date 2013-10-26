@@ -7,7 +7,7 @@ params = {
             'maxRows': '6',
             'style': 'LONG',
             'lang':'es',
-            'username':'demo'
+            'username':'astuntech_qgis_gaz'
           }
 
 def parseRequestResults(data):
