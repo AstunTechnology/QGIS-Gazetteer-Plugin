@@ -13,6 +13,7 @@ The [qgis-gazetteer-search](https://github.com/mixedbredie/qgis-gazetteer-search
 The plugin files need to live in a directory called `gazetteersearch` inside the QGIS Python plugins directory.
 
 *Windows note:* The QGIS plugin directory should be under `C:\Documents and Settings\<Username>\.qgis2\python\plugins\` (Windows XP) or `C:\Users\<Username>\.qgis2\python\plugins\` (Windows +7).
+
 *QGIS 1.8 note:* QGIS 1.8 stores it config under a `.qgis` directory.
 
 ### Using git
