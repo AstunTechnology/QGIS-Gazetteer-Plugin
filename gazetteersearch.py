@@ -20,12 +20,17 @@
  ***************************************************************************/
 """
 # Import the PyQt and QGIS libraries
-from PyQt4.QtCore import (QFileInfo, QSettings, QTranslator, 
+from PyQt4.QtCore import (QFileInfo, QSettings, QTranslator,
                           QCoreApplication, Qt, QSizeF)
 from PyQt4.QtGui import QDockWidget, QIcon, QAction, QTextDocument, QColor
 from gazetteersearchdialog import gazetteerSearchDialog
+<<<<<<< HEAD
 from qgis.core import (QgsApplication, QgsMessageLog, QgsCoordinateReferenceSystem,
                        QgsRectangle, QgsPoint, QgsCoordinateTransform)
+=======
+from qgis.core import (QGis, QgsApplication, QgsMessageLog, QgsCoordinateReferenceSystem,
+                       QgsRectangle, QgsCoordinateTransform)
+>>>>>>> 199c8d3547a7699af41084bf5cfb49af1f9eacaf
 from qgis.gui import QgsVertexMarker, QgsAnnotationItem
 
 from importlib import import_module
@@ -48,7 +53,7 @@ class gazetteerSearch:
         self.marker.setPenWidth(3)
         self.marker.setIconType(QgsVertexMarker.ICON_CROSS)
         self.marker.hide()
-        
+
         # Create the dialog and keep reference
         self.widget = gazetteerSearchDialog()
         self.widget.runSearch.connect(self.runSearch)
@@ -57,9 +62,17 @@ class gazetteerSearch:
         # initialize plugin directory
         self.plugin_dir = QFileInfo(QgsApplication.qgisUserDbFilePath()).path() + "/python/plugins/QGIS-Gazetteer-Plugin"
         # initialize locale
+
         localePath = ""
+<<<<<<< HEAD
         locale = QSettings().value("locale/userLocale")[0:2]
        
+=======
+        if QGis.QGIS_VERSION_INT < 10900:
+            locale = QSettings().value("locale/userLocale").toString()[0:2]
+        else:
+            locale = QSettings().value("locale/userLocale")[0:2]
+>>>>>>> 199c8d3547a7699af41084bf5cfb49af1f9eacaf
         if QFileInfo(self.plugin_dir).exists():
             localePath = self.plugin_dir + "/i18n/gazetteersearch_" + locale + ".qm"
 
@@ -69,7 +82,7 @@ class gazetteerSearch:
 
             if qVersion() > '4.3.3':
                 QCoreApplication.installTranslator(self.translator)
-   
+
     def initGui(self):
         # Create action that will start plugin configuration
         self.action = QAction(QIcon(":/plugins/gazetteersearch/icon.png"), \
@@ -87,10 +100,10 @@ class gazetteerSearch:
         self.iface.removeToolBarIcon(self.action)
         self.iface.mapCanvas().scene().removeItem(self.marker)
         self.marker = None
-    
+
     def _hideMarker(self):
         self.marker.hide()
-    
+
     # run method that performs all the real work
     def run(self):
         if not self.dock:
@@ -98,43 +111,49 @@ class gazetteerSearch:
             self.dock.setWidget(self.widget)
             self.iface.addDockWidget(Qt.RightDockWidgetArea, self.dock)
             self.gazetteers = common.getGazetteers()
-            for gazetter in self.gazetteers.iterkeys(): 
+            for gazetter in self.gazetteers.iterkeys():
                 self.widget.addGazetter(gazetter)
-                
+
             if len(self.gazetteers) == 1:
                 self.widget.hideGazetteers()
         else:
             self.dock.show()
-            
+
     def runSearch(self, searchString, selectedGazetteer):
         gazetteer_config = self.gazetteers[str(selectedGazetteer)]
         gazetteer = self.getGazetteerModule(gazetteer_config)
         url = common.prepareURL(gazetteer.url, gazetteer.params, searchString)
         data = common.search(url)
-        
+
         try:
             self.results = list(gazetteer.parseRequestResults(data))
         except ValueError:
             self.results = []
-            
+
         if len(self.results) == 0:
             self.widget.addError('No results found for "%s"' % searchString)
-            
+
         for res in self.results:
             self.widget.addResult(res.description)
-                        
+
     def clearResults(self):
         self.widget.clearResults()
         self.marker.hide()
-            
+
     def getGazetteerModule(self, config):
+<<<<<<< HEAD
         gazetteer_module = config['gazetteer']   
         imported_gazetteer = import_module('.%s' % gazetteer_module, 'QGIS-Gazetteer-Plugin.gazetteers') # Needs to be changed to reflect folder structure
+=======
+        gazetteer_module = config['gazetteer']
+        imported_gazetteer = import_module('gazetteers.%s' % gazetteer_module)
+>>>>>>> 199c8d3547a7699af41084bf5cfb49af1f9eacaf
         return imported_gazetteer
-            
+
     def zoomTo(self, name):
         for res in self.results:
             if unicode(res.description) == unicode(name):
+<<<<<<< HEAD
 #                dest_crs = self.canvas.mapRenderer().destinationCrs()
 #                src_crs = QgsCoordinateReferenceSystem()
 #                src_crs.createFromEpsg(res.epsg)
@@ -144,6 +163,18 @@ class gazetteerSearch:
 #                y = new_point.y()
                 x = res.x
                 y = res.y
+=======
+                dest_crs = self.canvas.mapRenderer().destinationCrs()
+                if QGis.QGIS_VERSION_INT < 10900:
+                    src_crs = QgsCoordinateReferenceSystem()
+                    src_crs.createFromEpsg(res.epsg)
+                else:
+                    src_crs = QgsCoordinateReferenceSystem(res.epsg, QgsCoordinateReferenceSystem.EpsgCrsId)
+                transform = QgsCoordinateTransform(src_crs, dest_crs)
+                new_point = transform.transform(res.x, res.y)
+                x = new_point.x()
+                y = new_point.y()
+>>>>>>> 199c8d3547a7699af41084bf5cfb49af1f9eacaf
                 self.canvas.setExtent(QgsRectangle(x,y,x,y))
                 self.canvas.zoomScale(res.zoom)
                 self.canvas.refresh()
