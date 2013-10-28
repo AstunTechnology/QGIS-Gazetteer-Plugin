@@ -55,7 +55,7 @@ class gazetteerSearch:
         self.widget.ui.clearButton.pressed.connect(self.clearResults)
         self.widget.zoomRequested.connect(self.zoomTo)
         # initialize plugin directory
-        self.plugin_dir = QFileInfo(QgsApplication.qgisUserDbFilePath()).path() + "/python/plugins/gazetteersearch"
+        self.plugin_dir = QFileInfo(QgsApplication.qgisUserDbFilePath()).path() + "/python/plugins/QGIS-Gazetteer-Plugin"
         # initialize locale
 
         localePath = ""
@@ -131,8 +131,8 @@ class gazetteerSearch:
         self.marker.hide()
 
     def getGazetteerModule(self, config):
-        gazetteer_module = config['gazetteer']
-        imported_gazetteer = import_module('gazetteers.%s' % gazetteer_module)
+        gazetteer_module = config['gazetteer']   
+        imported_gazetteer = import_module('.%s' % gazetteer_module, 'QGIS-Gazetteer-Plugin.gazetteers') # Needs to be changed to reflect folder structure
         return imported_gazetteer
 
     def zoomTo(self, name):
@@ -151,6 +151,6 @@ class gazetteerSearch:
                 self.canvas.setExtent(QgsRectangle(x,y,x,y))
                 self.canvas.zoomScale(res.zoom)
                 self.canvas.refresh()
-                self.marker.setCenter(new_point)
+                self.marker.setCenter(QgsPoint(x,y))
                 self.marker.show()
                 return
