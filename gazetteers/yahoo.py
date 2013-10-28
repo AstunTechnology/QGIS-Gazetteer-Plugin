@@ -1,7 +1,7 @@
 from collections import namedtuple
 from xml.etree import ElementTree
 
-url = "http://where.yahooapis.com/v1/places.q('##searchstring##')"
+url = "http://where.yahooapis.com/v1/places.q('##searchstring##');count=25"
 params = {
             'appid':'s80LwDXV34EAC3zK0dh9k43ZuDaDjXPqzgPK3kNOhn0AJMD6l1dIOS0kqiKBYnhFjESgLAedBIK.DCHgup8F5Kvvcd9y9CY-'
           }

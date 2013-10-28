@@ -4,9 +4,9 @@ from xml.etree import ElementTree
 url = "http://api.geonames.org/search"
 params = {
             'q': '##searchstring##',
-            'maxRows': '6',
+            'maxRows': '25',
             'style': 'LONG',
-            'lang':'es',
+            'lang':'en',
             'username':'astuntech_qgis_gaz'
           }
 
