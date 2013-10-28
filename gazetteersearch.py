@@ -24,13 +24,8 @@ from PyQt4.QtCore import (QFileInfo, QSettings, QTranslator,
                           QCoreApplication, Qt, QSizeF)
 from PyQt4.QtGui import QDockWidget, QIcon, QAction, QTextDocument, QColor
 from gazetteersearchdialog import gazetteerSearchDialog
-<<<<<<< HEAD
-from qgis.core import (QgsApplication, QgsMessageLog, QgsCoordinateReferenceSystem,
-                       QgsRectangle, QgsPoint, QgsCoordinateTransform)
-=======
 from qgis.core import (QGis, QgsApplication, QgsMessageLog, QgsCoordinateReferenceSystem,
                        QgsRectangle, QgsCoordinateTransform)
->>>>>>> 199c8d3547a7699af41084bf5cfb49af1f9eacaf
 from qgis.gui import QgsVertexMarker, QgsAnnotationItem
 
 from importlib import import_module
@@ -64,15 +59,10 @@ class gazetteerSearch:
         # initialize locale
 
         localePath = ""
-<<<<<<< HEAD
-        locale = QSettings().value("locale/userLocale")[0:2]
-       
-=======
         if QGis.QGIS_VERSION_INT < 10900:
             locale = QSettings().value("locale/userLocale").toString()[0:2]
         else:
             locale = QSettings().value("locale/userLocale")[0:2]
->>>>>>> 199c8d3547a7699af41084bf5cfb49af1f9eacaf
         if QFileInfo(self.plugin_dir).exists():
             localePath = self.plugin_dir + "/i18n/gazetteersearch_" + locale + ".qm"
 
@@ -141,29 +131,13 @@ class gazetteerSearch:
         self.marker.hide()
 
     def getGazetteerModule(self, config):
-<<<<<<< HEAD
         gazetteer_module = config['gazetteer']   
         imported_gazetteer = import_module('.%s' % gazetteer_module, 'QGIS-Gazetteer-Plugin.gazetteers') # Needs to be changed to reflect folder structure
-=======
-        gazetteer_module = config['gazetteer']
-        imported_gazetteer = import_module('gazetteers.%s' % gazetteer_module)
->>>>>>> 199c8d3547a7699af41084bf5cfb49af1f9eacaf
         return imported_gazetteer
 
     def zoomTo(self, name):
         for res in self.results:
             if unicode(res.description) == unicode(name):
-<<<<<<< HEAD
-#                dest_crs = self.canvas.mapRenderer().destinationCrs()
-#                src_crs = QgsCoordinateReferenceSystem()
-#                src_crs.createFromEpsg(res.epsg)
-#                transform = QgsCoordinateTransform(src_crs, dest_crs)
-#                new_point = transform.transform(res.x, res.y)
-#                x = new_point.x()
-#                y = new_point.y()
-                x = res.x
-                y = res.y
-=======
                 dest_crs = self.canvas.mapRenderer().destinationCrs()
                 if QGis.QGIS_VERSION_INT < 10900:
                     src_crs = QgsCoordinateReferenceSystem()
@@ -174,7 +148,6 @@ class gazetteerSearch:
                 new_point = transform.transform(res.x, res.y)
                 x = new_point.x()
                 y = new_point.y()
->>>>>>> 199c8d3547a7699af41084bf5cfb49af1f9eacaf
                 self.canvas.setExtent(QgsRectangle(x,y,x,y))
                 self.canvas.zoomScale(res.zoom)
                 self.canvas.refresh()
