@@ -4,7 +4,7 @@ from xml.etree import ElementTree
 url = "http://nominatim.openstreetmap.org/search"
 params = {
             'q': '##searchstring##',
-            'limit': 10,
+            'limit': 50,
             'format':'xml',
             'addressdetails': 1,
             'countrycodes':'gb'
