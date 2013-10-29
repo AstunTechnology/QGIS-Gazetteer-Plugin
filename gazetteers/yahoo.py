@@ -22,3 +22,9 @@ def parseRequestResults(data):
         result.zoom = 50000
         result.epsg = 4326
         yield result
+
+if __name__ == '__main__':
+    with open('yahoo.xml') as f:
+        results = list(parseRequestResults(f.read()))
+        for item in results:
+            print item.description

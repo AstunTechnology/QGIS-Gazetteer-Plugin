@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="utf-8"?>
+<places xmlns="http://where.yahooapis.com/v1/schema.rng" xmlns:yahoo="http://www.yahooapis.com/v1/base.rng" yahoo:start="0" yahoo:count="25" yahoo:total="29">
+    <place yahoo:uri="http://where.yahooapis.com/v1/place/44418" xml:lang="en-GB">
+        <woeid>44418</woeid>
+        <placeTypeName code="7">Town</placeTypeName>
+        <name>London</name>
+        <country type="Country" code="GB" woeid="23424975">United Kingdom</country>
+        <admin1 type="Country" code="GB-ENG" woeid="24554868">England</admin1>
+        <admin2 type="County" code="GB-LND" woeid="23416974">Greater London</admin2>
+        <admin3></admin3>
+        <locality1 type="Town" woeid="44418">London</locality1>
+        <locality2></locality2>
+        <postal></postal>
+        <centroid>
+            <latitude>51.506321</latitude>
+            <longitude>-0.127140</longitude>
+        </centroid>
+        <boundingBox>
+            <southWest>
+                <latitude>51.280430</latitude>
+                <longitude>-0.563000</longitude>
+            </southWest>
+            <northEast>
+                <latitude>51.683979</latitude>
+                <longitude>0.278970</longitude>
+            </northEast>
+        </boundingBox>
+        <areaRank>7</areaRank>
+        <popRank>13</popRank>
+        <timezone type="Time Zone" woeid="28350903">Europe/London</timezone>
+    </place>
+    <place yahoo:uri="http://where.yahooapis.com/v1/place/4063" xml:lang="en-GB">
+        <woeid>4063</woeid>
+        <placeTypeName code="7">Town</placeTypeName>
+        <name>London</name>
+        <country type="Country" code="CA" woeid="23424775">Canada</country>
+        <admin1 type="Province" code="CA-ON" woeid="2344922">Ontario</admin1>
+        <admin2 type="County" code="" woeid="29375211">Middlesex</admin2>
+        <admin3></admin3>
+        <locality1 type="Town" woeid="4063">London</locality1>
+        <locality2></locality2>
+        <postal></postal>
+        <centroid>
+            <latitude>42.983250</latitude>
+            <longitude>-81.250031</longitude>
+        </centroid>
+        <boundingBox>
+            <southWest>
+                <latitude>42.914261</latitude>
+                <longitude>-81.371513</longitude>
+            </southWest>
+            <northEast>
+                <latitude>43.060768</latitude>
+                <longitude>-81.135658</longitude>
+            </northEast>
+        </boundingBox>
+        <areaRank>5</areaRank>
+        <popRank>11</popRank>
+        <timezone type="Time Zone" woeid="56043697">America/Toronto</timezone>
+    </place>
+    <place yahoo:uri="http://where.yahooapis.com/v1/place/2441293" xml:lang="en-GB">
+        <woeid>2441293</woeid>
+        <placeTypeName code="7">Town</placeTypeName>
+        <name>London</name>
+        <country type="Country" code="US" woeid="23424977">United States</country>
+        <admin1 type="State" code="US-KY" woeid="2347576">Kentucky</admin1>
+        <admin2 type="County" code="" woeid="12588538">Laurel</admin2>
+        <admin3></admin3>
+        <locality1 type="Town" woeid="2441293">London</locality1>
+        <locality2></locality2>
+        <postal></postal>
+        <centroid>
+            <latitude>37.127201</latitude>
+            <longitude>-84.083801</longitude>
+        </centroid>
+        <boundingBox>
+            <southWest>
+                <latitude>37.102821</latitude>
+                <longitude>-84.126663</longitude>
+            </southWest>
+            <northEast>
+                <latitude>37.152210</latitude>
+                <longitude>-84.038658</longitude>
+            </northEast>
+        </boundingBox>
+        <areaRank>3</areaRank>
+        <popRank>8</popRank>
+        <timezone type="Time Zone" woeid="56043647">America/Kentucky/Louisville</timezone>
+    </place>
+    <place yahoo:uri="http://where.yahooapis.com/v1/place/2441291" xml:lang="en-GB">
+        <woeid>2441291</woeid>
+        <placeTypeName code="7">Town</placeTypeName>
+        <name>London</name>
+        <country type="Country" code="US" woeid="23424977">United States</country>
+        <admin1 type="State" code="US-TX" woeid="2347602">Texas</admin1>
+        <admin2 type="County" code="" woeid="12590140">Kimble</admin2>
+        <admin3></admin3>
+        <locality1 type="Town" woeid="2441291">London</locality1>
+        <locality2></locality2>
+        <postal type="Zip Code" woeid="12791265">76854</postal>
+        <centroid>
+            <latitude>30.685770</latitude>
+            <longitude>-99.564850</longitude>
+        </centroid>
+        <boundingBox>
+            <southWest>
+                <latitude>30.677750</latitude>
+                <longitude>-99.574188</longitude>
+            </southWest>
+            <northEast>
+                <latitude>30.693800</latitude>
+                <longitude>-99.555527</longitude>
+            </northEast>
+        </boundingBox>
+        <areaRank>1</areaRank>
+        <popRank>8</popRank>
+        <timezone type="Time Zone" woeid="56043661">America/Chicago</timezone>
+    </place>
+    <place yahoo:uri="http://where.yahooapis.com/v1/place/2441279" xml:lang="en-GB">
+        <woeid>2441279</woeid>
+        <placeTypeName code="7">Town</placeTypeName>
+        <name>London</name>
+        <country type="Country" code="US" woeid="23424977">United States</country>
+        <admin1 type="State" code="US-CA" woeid="2347563">California</admin1>
+        <admin2 type="County" code="" woeid="12587723">Tulare</admin2>
+        <admin3></admin3>
+        <locality1 type="Town" woeid="2441279">London</locality1>
+        <locality2></locality2>
+        <postal type="Zip Code" woeid="12796963">93618</postal>
+        <centroid>
+            <latitude>36.475281</latitude>
+            <longitude>-119.438530</longitude>
+        </centroid>
+        <boundingBox>
+            <southWest>
+                <latitude>36.467670</latitude>
+                <longitude>-119.445732</longitude>
+            </southWest>
+            <northEast>
+                <latitude>36.482731</latitude>
+                <longitude>-119.431328</longitude>
+            </northEast>
+        </boundingBox>
+        <areaRank>1</areaRank>
+        <popRank>1</popRank>
+        <timezone type="Time Zone" woeid="56043663">America/Los_Angeles</timezone>
+    </place>
+    <place yahoo:uri="http://where.yahooapis.com/v1/place/2441292" xml:lang="en-GB">
+        <woeid>2441292</woeid>
+        <placeTypeName code="7">Town</placeTypeName>
+        <name>London</name>
+        <country type="Country" code="US" woeid="23424977">United States</country>
+        <admin1 type="State" code="US-OH" woeid="2347594">Ohio</admin1>
+        <admin2 type="County" code="" woeid="12589575">Madison</admin2>
+        <admin3></admin3>
+        <locality1 type="Town" woeid="2441292">London</locality1>
+        <locality2></locality2>
+        <postal type="Zip Code" woeid="12776172">43140</postal>
+        <centroid>
+            <latitude>39.885960</latitude>
+            <longitude>-83.448128</longitude>
+        </centroid>
+        <boundingBox>
+            <southWest>
+                <latitude>39.859211</latitude>
+                <longitude>-83.478882</longitude>
+            </southWest>
+            <northEast>
+                <latitude>39.921780</latitude>
+                <longitude>-83.393143</longitude>
+            </northEast>
+        </boundingBox>
+        <areaRank>3</areaRank>
+        <popRank>8</popRank>
+        <timezone type="Time Zone" woeid="56043648">America/New_York</timezone>
+    </place>
+    <place yahoo:uri="http://where.yahooapis.com/v1/place/2441289" xml:lang="en-GB">
+        <woeid>2441289</woeid>
+        <placeTypeName code="7">Town</placeTypeName>
+        <name>London</name>
+        <country type="Country" code="US" woeid="23424977">United States</country>
+        <admin1 type="State" code="US-WV" woeid="2347607">West Virginia</admin1>
+        <admin2 type="County" code="" woeid="12590498">Kanawha</admin2>
+        <admin3></admin3>
+        <locality1 type="Town" woeid="2441289">London</locality1>
+        <locality2></locality2>
+        <postal type="Zip Code" woeid="12768106">25039</postal>
+        <centroid>
+            <latitude>38.186329</latitude>
+            <longitude>-81.346451</longitude>
+        </centroid>
+        <boundingBox>
+            <southWest>
+                <latitude>38.177238</latitude>
+                <longitude>-81.358017</longitude>
+            </southWest>
+            <northEast>
+                <latitude>38.195419</latitude>
+                <longitude>-81.334877</longitude>
+            </northEast>
+        </boundingBox>
+        <areaRank>2</areaRank>
+        <popRank>1</popRank>
+        <timezone type="Time Zone" woeid="56043648">America/New_York</timezone>
+    </place>
+    <place yahoo:uri="http://where.yahooapis.com/v1/place/2441278" xml:lang="en-GB">
+        <woeid>2441278</woeid>
+        <placeTypeName code="7">Town</placeTypeName>
+        <name>London</name>
+        <country type="Country" code="US" woeid="23424977">United States</country>
+        <admin1 type="State" code="US-AR" woeid="2347562">Arkansas</admin1>
+        <admin2 type="County" code="" woeid="12587652">Pope</admin2>
+        <admin3></admin3>
+        <locality1 type="Town" woeid="2441278">London</locality1>
+        <locality2></locality2>
+        <postal type="Zip Code" woeid="12789473">72847</postal>
+        <centroid>
+            <latitude>35.330799</latitude>
+            <longitude>-93.253899</longitude>
+        </centroid>
+        <boundingBox>
+            <southWest>
+                <latitude>35.319340</latitude>
+                <longitude>-93.265541</longitude>
+            </southWest>
+            <northEast>
+                <latitude>35.338020</latitude>
+                <longitude>-93.187363</longitude>
+            </northEast>
+        </boundingBox>
+        <areaRank>2</areaRank>
+        <popRank>1</popRank>
+        <timezone type="Time Zone" woeid="56043661">America/Chicago</timezone>
+    </place>
+    <place yahoo:uri="http://where.yahooapis.com/v1/place/2441286" xml:lang="en-GB">
+        <woeid>2441286</woeid>
+        <placeTypeName code="7">Town</placeTypeName>
+        <name>London</name>
+        <country type="Country" code="US" woeid="23424977">United States</country>
+        <admin1 type="State" code="US-OR" woeid="2347596">Oregon</admin1>
+        <admin2 type="County" code="" woeid="12589711">Lane</admin2>
+        <admin3></admin3>
+        <locality1 type="Town" woeid="2441286">London</locality1>
+        <locality2></locality2>
+        <postal type="Zip Code" woeid="12798656">97424</postal>
+        <centroid>
+            <latitude>43.635551</latitude>
+            <longitude>-123.091049</longitude>
+        </centroid>
+        <boundingBox>
+            <southWest>
+                <latitude>43.630501</latitude>
+                <longitude>-123.097328</longitude>
+            </southWest>
+            <northEast>
+                <latitude>43.639599</latitude>
+                <longitude>-123.084770</longitude>
+            </northEast>
+        </boundingBox>
+        <areaRank>0</areaRank>
+        <popRank>1</popRank>
+        <timezone type="Time Zone" woeid="56043663">America/Los_Angeles</timezone>
+    </place>
+    <place yahoo:uri="http://where.yahooapis.com/v1/place/2441281" xml:lang="en-GB">
+        <woeid>2441281</woeid>
+        <placeTypeName code="7">Town</placeTypeName>
+        <name>London</name>
+        <country type="Country" code="US" woeid="23424977">United States</country>
+        <admin1 type="State" code="US-MI" woeid="2347581">Michigan</admin1>
+        <admin2 type="County" code="" woeid="12588771">Monroe</admin2>
+        <admin3></admin3>
+        <locality1 type="Town" woeid="2441281">London</locality1>
+        <locality2></locality2>
+        <postal type="Zip Code" woeid="12778641">48159</postal>
+        <centroid>
+            <latitude>42.020210</latitude>
+            <longitude>-83.607811</longitude>
+        </centroid>
+        <boundingBox>
+            <southWest>
+                <latitude>42.011120</latitude>
+                <longitude>-83.620049</longitude>
+            </southWest>
+            <northEast>
+                <latitude>42.029301</latitude>
+                <longitude>-83.595573</longitude>
+            </northEast>
+        </boundingBox>
+        <areaRank>2</areaRank>
+        <popRank>1</popRank>
+        <timezone type="Time Zone" woeid="56043658">America/Detroit</timezone>
+    </place>
+    <place yahoo:uri="http://where.yahooapis.com/v1/place/2441285" xml:lang="en-GB">
+        <woeid>2441285</woeid>
+        <placeTypeName code="7">Town</placeTypeName>
+        <name>Little London</name>
+        <country type="Country" code="US" woeid="23424977">United States</country>
+        <admin1 type="State" code="US-OH" woeid="2347594">Ohio</admin1>
+        <admin2 type="County" code="" woeid="12589596">Richland</admin2>
+        <admin3></admin3>
+        <locality1 type="Town" woeid="2441285">Little London</locality1>
+        <locality2></locality2>
+        <postal type="Zip Code" woeid="12777006">44875</postal>
+        <centroid>
+            <latitude>40.914890</latitude>
+            <longitude>-82.659126</longitude>
+        </centroid>
+        <boundingBox>
+            <southWest>
+                <latitude>40.910370</latitude>
+                <longitude>-82.665154</longitude>
+            </southWest>
+            <northEast>
+                <latitude>40.919472</latitude>
+                <longitude>-82.653107</longitude>
+            </northEast>
+        </boundingBox>
+        <areaRank>0</areaRank>
+        <popRank>1</popRank>
+        <timezone type="Time Zone" woeid="56043648">America/New_York</timezone>
+    </place>
+    <place yahoo:uri="http://where.yahooapis.com/v1/place/2441282" xml:lang="en-GB">
+        <woeid>2441282</woeid>
+        <placeTypeName code="7">Town</placeTypeName>
+        <name>London</name>
+        <country type="Country" code="US" woeid="23424977">United States</country>
+        <admin1 type="State" code="US-MN" woeid="2347582">Minnesota</admin1>
+        <admin2 type="County" code="" woeid="12588820">Freeborn</admin2>
+        <admin3></admin3>
+        <locality1 type="Town" woeid="2441282">London</locality1>
+        <locality2></locality2>
+        <postal type="Zip Code" woeid="12782203">56036</postal>
+        <centroid>
+            <latitude>43.526348</latitude>
+            <longitude>-93.063728</longitude>
+        </centroid>
+        <boundingBox>
+            <southWest>
+                <latitude>43.517269</latitude>
+                <longitude>-93.076279</longitude>
+            </southWest>
+            <northEast>
+                <latitude>43.535450</latitude>
+                <longitude>-93.051201</longitude>
+            </northEast>
+        </boundingBox>
+        <areaRank>2</areaRank>
+        <popRank>1</popRank>
+        <timezone type="Time Zone" woeid="56043661">America/Chicago</timezone>
+    </place>
+    <place yahoo:uri="http://where.yahooapis.com/v1/place/2441288" xml:lang="en-GB">
+        <woeid>2441288</woeid>
+        <placeTypeName code="7">Town</placeTypeName>
+        <name>London</name>
+        <country type="Country" code="US" woeid="23424977">United States</country>
+        <admin1 type="State" code="US-TN" woeid="2347601">Tennessee</admin1>
+        <admin2 type="County" code="" woeid="12589926">Cocke</admin2>
+        <admin3></admin3>
+        <locality1 type="Town" woeid="2441288">London</locality1>
+        <locality2></locality2>
+        <postal type="Zip Code" woeid="12774092">37727</postal>
+        <centroid>
+            <latitude>35.872181</latitude>
+            <longitude>-83.002258</longitude>
+        </centroid>
+        <boundingBox>
+            <southWest>
+                <latitude>35.867619</latitude>
+                <longitude>-83.007858</longitude>
+            </southWest>
+            <northEast>
+                <latitude>35.876720</latitude>
+                <longitude>-82.996643</longitude>
+            </northEast>
+        </boundingBox>
+        <areaRank>0</areaRank>
+        <popRank>1</popRank>
+        <timezone type="Time Zone" woeid="56043648">America/New_York</timezone>
+    </place>
+    <place yahoo:uri="http://where.yahooapis.com/v1/place/2441283" xml:lang="en-GB">
+        <woeid>2441283</woeid>
+        <placeTypeName code="7">Town</placeTypeName>
+        <name>London</name>
+        <country type="Country" code="US" woeid="23424977">United States</country>
+        <admin1 type="State" code="US-MN" woeid="2347582">Minnesota</admin1>
+        <admin2 type="County" code="" woeid="12588834">Lake</admin2>
+        <admin3></admin3>
+        <locality1 type="Town" woeid="2441283">London</locality1>
+        <locality2></locality2>
+        <postal type="Zip Code" woeid="12782010">55616</postal>
+        <centroid>
+            <latitude>47.202911</latitude>
+            <longitude>-91.569313</longitude>
+        </centroid>
+        <boundingBox>
+            <southWest>
+                <latitude>47.198349</latitude>
+                <longitude>-91.576012</longitude>
+            </southWest>
+            <northEast>
+                <latitude>47.207451</latitude>
+                <longitude>-91.562630</longitude>
+            </northEast>
+        </boundingBox>
+        <areaRank>0</areaRank>
+        <popRank>1</popRank>
+        <timezone type="Time Zone" woeid="56043661">America/Chicago</timezone>
+    </place>
+    <place yahoo:uri="http://where.yahooapis.com/v1/place/2441287" xml:lang="en-GB">
+        <woeid>2441287</woeid>
+        <placeTypeName code="22">Suburb</placeTypeName>
+        <name>London</name>
+        <country type="Country" code="US" woeid="23424977">United States</country>
+        <admin1 type="State" code="US-PA" woeid="2347597">Pennsylvania</admin1>
+        <admin2 type="County" code="" woeid="12589770">Mercer</admin2>
+        <admin3></admin3>
+        <locality1 type="Town" woeid="28744696">Springfield</locality1>
+        <locality2 type="Suburb" woeid="2441287">London</locality2>
+        <postal type="Zip Code" woeid="12764168">16127</postal>
+        <centroid>
+            <latitude>41.144981</latitude>
+            <longitude>-80.146202</longitude>
+        </centroid>
+        <boundingBox>
+            <southWest>
+                <latitude>41.140419</latitude>
+                <longitude>-80.152267</longitude>
+            </southWest>
+            <northEast>
+                <latitude>41.149521</latitude>
+                <longitude>-80.140190</longitude>
+            </northEast>
+        </boundingBox>
+        <areaRank>0</areaRank>
+        <popRank>0</popRank>
+        <timezone type="Time Zone" woeid="56043648">America/New_York</timezone>
+    </place>
+    <place yahoo:uri="http://where.yahooapis.com/v1/place/2441290" xml:lang="en-GB">
+        <woeid>2441290</woeid>
+        <placeTypeName code="22">Suburb</placeTypeName>
+        <name>London</name>
+        <country type="Country" code="US" woeid="23424977">United States</country>
+        <admin1 type="State" code="US-WI" woeid="2347608">Wisconsin</admin1>
+        <admin2 type="County" code="" woeid="12590546">Dane</admin2>
+        <admin3></admin3>
+        <locality1 type="Town" woeid="">London</locality1>
+        <locality2 type="Suburb" woeid="2441290">London</locality2>
+        <postal type="Zip Code" woeid="12780974">53523</postal>
+        <centroid>
+            <latitude>43.047798</latitude>
+            <longitude>-89.014587</longitude>
+        </centroid>
+        <boundingBox>
+            <southWest>
+                <latitude>43.043251</latitude>
+                <longitude>-89.020798</longitude>
+            </southWest>
+            <northEast>
+                <latitude>43.052349</latitude>
+                <longitude>-89.008362</longitude>
+            </northEast>
+        </boundingBox>
+        <areaRank>0</areaRank>
+        <popRank>0</popRank>
+        <timezone type="Time Zone" woeid="56043661">America/Chicago</timezone>
+    </place>
+    <place yahoo:uri="http://where.yahooapis.com/v1/place/2441300" xml:lang="en-GB">
+        <woeid>2441300</woeid>
+        <placeTypeName code="7">Town</placeTypeName>
+        <name>London</name>
+        <country type="Country" code="US" woeid="23424977">United States</country>
+        <admin1 type="State" code="US-AL" woeid="2347559">Alabama</admin1>
+        <admin2 type="County" code="" woeid="12587504">Conecuh</admin2>
+        <admin3></admin3>
+        <locality1 type="Town" woeid="2441300">London</locality1>
+        <locality2></locality2>
+        <postal type="Zip Code" woeid="12773502">36432</postal>
+        <centroid>
+            <latitude>31.296160</latitude>
+            <longitude>-87.080132</longitude>
+        </centroid>
+        <boundingBox>
+            <southWest>
+                <latitude>31.291611</latitude>
+                <longitude>-87.085457</longitude>
+            </southWest>
+            <northEast>
+                <latitude>31.300711</latitude>
+                <longitude>-87.074821</longitude>
+            </northEast>
+        </boundingBox>
+        <areaRank>0</areaRank>
+        <popRank>1</popRank>
+        <timezone type="Time Zone" woeid="56043661">America/Chicago</timezone>
+    </place>
+    <place yahoo:uri="http://where.yahooapis.com/v1/place/2441280" xml:lang="en-GB">
+        <woeid>2441280</woeid>
+        <placeTypeName code="7">Town</placeTypeName>
+        <name>London</name>
+        <country type="Country" code="US" woeid="23424977">United States</country>
+        <admin1 type="State" code="US-IN" woeid="2347573">Indiana</admin1>
+        <admin2 type="County" code="" woeid="12588251">Shelby</admin2>
+        <admin3></admin3>
+        <locality1 type="Town" woeid="2441280">London</locality1>
+        <locality2></locality2>
+        <postal type="Zip Code" woeid="12777602">46126</postal>
+        <centroid>
+            <latitude>39.625320</latitude>
+            <longitude>-85.921097</longitude>
+        </centroid>
+        <boundingBox>
+            <southWest>
+                <latitude>39.620762</latitude>
+                <longitude>-85.927017</longitude>
+            </southWest>
+            <northEast>
+                <latitude>39.629860</latitude>
+                <longitude>-85.915222</longitude>
+            </northEast>
+        </boundingBox>
+        <areaRank>0</areaRank>
+        <popRank>1</popRank>
+        <timezone type="Time Zone" woeid="56043656">America/Indiana/Indianapolis</timezone>
+    </place>
+    <place yahoo:uri="http://where.yahooapis.com/v1/place/2441277" xml:lang="en-GB">
+        <woeid>2441277</woeid>
+        <placeTypeName code="7">Town</placeTypeName>
+        <name>London</name>
+        <country type="Country" code="US" woeid="23424977">United States</country>
+        <admin1 type="State" code="US-AL" woeid="2347559">Alabama</admin1>
+        <admin2 type="County" code="" woeid="12587537">Montgomery</admin2>
+        <admin3></admin3>
+        <locality1 type="Town" woeid="2441277">London</locality1>
+        <locality2></locality2>
+        <postal type="Zip Code" woeid="12773364">36064</postal>
+        <centroid>
+            <latitude>32.267132</latitude>
+            <longitude>-86.050850</longitude>
+        </centroid>
+        <boundingBox>
+            <southWest>
+                <latitude>32.262581</latitude>
+                <longitude>-86.056229</longitude>
+            </southWest>
+            <northEast>
+                <latitude>32.271679</latitude>
+                <longitude>-86.045471</longitude>
+            </northEast>
+        </boundingBox>
+        <areaRank>0</areaRank>
+        <popRank>1</popRank>
+        <timezone type="Time Zone" woeid="56043661">America/Chicago</timezone>
+    </place>
+    <place yahoo:uri="http://where.yahooapis.com/v1/place/2441284" xml:lang="en-GB">
+        <woeid>2441284</woeid>
+        <placeTypeName code="7">Town</placeTypeName>
+        <name>London</name>
+        <country type="Country" code="US" woeid="23424977">United States</country>
+        <admin1 type="State" code="US-MO" woeid="2347584">Missouri</admin1>
+        <admin2 type="County" code="" woeid="12588968">Atchison</admin2>
+        <admin3></admin3>
+        <locality1 type="Town" woeid="2441284">London</locality1>
+        <locality2></locality2>
+        <postal type="Zip Code" woeid="12786152">64491</postal>
+        <centroid>
+            <latitude>40.445000</latitude>
+            <longitude>-95.234703</longitude>
+        </centroid>
+        <boundingBox>
+            <southWest>
+                <latitude>40.440449</latitude>
+                <longitude>-95.240669</longitude>
+            </southWest>
+            <northEast>
+                <latitude>40.449551</latitude>
+                <longitude>-95.228729</longitude>
+            </northEast>
+        </boundingBox>
+        <areaRank>0</areaRank>
+        <popRank>0</popRank>
+        <timezone type="Time Zone" woeid="56043661">America/Chicago</timezone>
+    </place>
+    <place yahoo:uri="http://where.yahooapis.com/v1/place/56043700" xml:lang="en-GB">
+        <woeid>56043700</woeid>
+        <placeTypeName code="7">Town</placeTypeName>
+        <name>London</name>
+        <country type="Country" code="KI" woeid="23424867">Kiribati</country>
+        <admin1></admin1>
+        <admin2></admin2>
+        <admin3></admin3>
+        <locality1 type="Town" woeid="56043700">London</locality1>
+        <locality2></locality2>
+        <postal></postal>
+        <centroid>
+            <latitude>1.996070</latitude>
+            <longitude>-157.782867</longitude>
+        </centroid>
+        <boundingBox>
+            <southWest>
+                <latitude>1.986980</latitude>
+                <longitude>-157.791962</longitude>
+            </southWest>
+            <northEast>
+                <latitude>2.005160</latitude>
+                <longitude>-157.773758</longitude>
+            </northEast>
+        </boundingBox>
+        <areaRank>2</areaRank>
+        <popRank>1</popRank>
+        <timezone type="Time Zone" woeid="28350951">Pacific/Kiritimati</timezone>
+    </place>
+    <place yahoo:uri="http://where.yahooapis.com/v1/place/90815823" xml:lang="en-GB">
+        <woeid>90815823</woeid>
+        <placeTypeName code="7">Town</placeTypeName>
+        <name>London</name>
+        <country type="Country" code="SE" woeid="23424954">Sweden</country>
+        <admin1 type="County" code="" woeid="2347064">Vasterbotten</admin1>
+        <admin2 type="Municipality" code="" woeid="12587441">Vannas</admin2>
+        <admin3></admin3>
+        <locality1 type="Town" woeid="90815823">London</locality1>
+        <locality2></locality2>
+        <postal type="Postal Code" woeid="12890071">91194</postal>
+        <centroid>
+            <latitude>63.872581</latitude>
+            <longitude>19.573509</longitude>
+        </centroid>
+        <boundingBox>
+            <southWest>
+                <latitude>63.863480</latitude>
+                <longitude>19.552860</longitude>
+            </southWest>
+            <northEast>
+                <latitude>63.881672</latitude>
+                <longitude>19.594151</longitude>
+            </northEast>
+        </boundingBox>
+        <areaRank>2</areaRank>
+        <popRank>1</popRank>
+        <timezone type="Time Zone" woeid="28350917">Europe/Stockholm</timezone>
+    </place>
+    <place yahoo:uri="http://where.yahooapis.com/v1/place/56017821" xml:lang="en-GB">
+        <woeid>56017821</woeid>
+        <placeTypeName code="33">Estate</placeTypeName>
+        <name>London</name>
+        <country type="Country" code="US" woeid="23424977">United States</country>
+        <admin1 type="State" code="US-AR" woeid="2347562">Arkansas</admin1>
+        <admin2 type="County" code="" woeid="12587598">Benton</admin2>
+        <admin3></admin3>
+        <locality1 type="Town" woeid="2361744">Bella Vista</locality1>
+        <locality2></locality2>
+        <postal type="Zip Code" woeid="12789403">72715</postal>
+        <centroid>
+            <latitude>36.439190</latitude>
+            <longitude>-94.253929</longitude>
+        </centroid>
+        <boundingBox>
+            <southWest>
+                <latitude>36.436760</latitude>
+                <longitude>-94.257668</longitude>
+            </southWest>
+            <northEast>
+                <latitude>36.441631</latitude>
+                <longitude>-94.250191</longitude>
+            </northEast>
+        </boundingBox>
+        <areaRank>0</areaRank>
+        <popRank>0</popRank>
+        <timezone type="Time Zone" woeid="56043661">America/Chicago</timezone>
+    </place>
+    <place yahoo:uri="http://where.yahooapis.com/v1/place/55998913" xml:lang="en-GB">
+        <woeid>55998913</woeid>
+        <placeTypeName code="22">Suburb</placeTypeName>
+        <name>London</name>
+        <country type="Country" code="CA" woeid="23424775">Canada</country>
+        <admin1 type="Province" code="CA-BC" woeid="2344916">British Columbia</admin1>
+        <admin2 type="County" code="" woeid="29375222">Greater Vancouver</admin2>
+        <admin3></admin3>
+        <locality1 type="Town" woeid="9947">Richmond</locality1>
+        <locality2 type="Suburb" woeid="55998875">Steveston</locality2>
+        <postal type="Postal Code" woeid="12698290">V7E</postal>
+        <centroid>
+            <latitude>49.117008</latitude>
+            <longitude>-123.156990</longitude>
+        </centroid>
+        <boundingBox>
+            <southWest>
+                <latitude>49.114571</latitude>
+                <longitude>-123.161324</longitude>
+            </southWest>
+            <northEast>
+                <latitude>49.119869</latitude>
+                <longitude>-123.152702</longitude>
+            </northEast>
+        </boundingBox>
+        <areaRank>0</areaRank>
+        <popRank>0</popRank>
+        <timezone type="Time Zone" woeid="56043690">America/Vancouver</timezone>
+    </place>
+    <place yahoo:uri="http://where.yahooapis.com/v1/place/90160670" xml:lang="en-GB">
+        <woeid>90160670</woeid>
+        <placeTypeName code="20">Point of Interest</placeTypeName>
+        <name>London</name>
+        <country type="Country" code="BR" woeid="23424768">Brazil</country>
+        <admin1 type="State" code="BR-SP" woeid="2344868">Sao Paulo</admin1>
+        <admin2 type="Municipality" code="" woeid="12581845">Araraquara</admin2>
+        <admin3></admin3>
+        <locality1 type="Town" woeid="455930">Araraquara</locality1>
+        <locality2></locality2>
+        <postal></postal>
+        <centroid>
+            <latitude>-21.783409</latitude>
+            <longitude>-48.171928</longitude>
+        </centroid>
+        <boundingBox>
+            <southWest>
+                <latitude>-21.783859</latitude>
+                <longitude>-48.172409</longitude>
+            </southWest>
+            <northEast>
+                <latitude>-21.782949</latitude>
+                <longitude>-48.171440</longitude>
+            </northEast>
+        </boundingBox>
+        <areaRank>0</areaRank>
+        <popRank>0</popRank>
+        <timezone type="Time Zone" woeid="28350792">America/Sao_Paulo</timezone>
+    </place>
+</places>

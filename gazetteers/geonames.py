@@ -24,7 +24,7 @@ def parseRequestResults(data):
         yield result
 
 if __name__ == '__main__':
-    f = open('test_geonames.xml')
-    results = list(parseRequestResults(f.read()))
-    for item in results:
-        print item.description
+    with open('geonames.xml') as f:
+        results = list(parseRequestResults(f.read()))
+        for item in results:
+            print item.description
