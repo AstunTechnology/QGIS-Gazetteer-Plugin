@@ -1,5 +1,6 @@
 from collections import namedtuple
 from xml.etree import ElementTree
+from common import text, pretty_join
 
 url = "http://where.yahooapis.com/v1/places.q('##searchstring##');count=25"
 params = {
@@ -14,11 +15,14 @@ def parseRequestResults(data):
     tree = ElementTree.fromstring(data)
     for item in tree.findall(schema('place')):
         result = namedtuple('Result', ['description', 'x', 'y', 'zoom', 'epsg'])
-        result.description = "%s, %s" % (item.find(schema('name')).text,
-                                         item.find(schema('country')).text)
+        desc = [text(item, schema('name')),
+                text(item, schema('admin1')),
+                text(item, schema('admin2')),
+                text(item, schema('country'))]
+        result.description = pretty_join(", ", desc)
         centroid = item.find(schema('centroid'))
-        result.x = float(centroid.find(schema('longitude')).text)
-        result.y = float(centroid.find(schema('latitude')).text)
+        result.x = float(text(centroid, schema('longitude')))
+        result.y = float(text(centroid, schema('latitude')))
         result.zoom = 50000
         result.epsg = 4326
         yield result

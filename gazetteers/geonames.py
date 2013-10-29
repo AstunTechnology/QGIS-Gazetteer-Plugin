@@ -1,5 +1,6 @@
 from collections import namedtuple
 from xml.etree import ElementTree
+from common import text, pretty_join
 
 url = "http://api.geonames.org/search"
 params = {
@@ -15,10 +16,10 @@ def parseRequestResults(data):
     tree = ElementTree.fromstring(data)
     for item in tree.findall('geoname'):
         result = namedtuple('Result', ['description', 'x', 'y', 'zoom', 'epsg'])
-        result.description = "%s, %s" % (item.find('name').text,
-                                         item.find('countryName').text)
-        result.x = float(item.find('lng').text)
-        result.y = float(item.find('lat').text)
+        desc = [text(item, 'name'), text(item, 'countryName')]
+        result.description = pretty_join(", ", desc)
+        result.x = float(text(item, 'lng'))
+        result.y = float(text(item, 'lat'))
         result.zoom = 50000
         result.epsg = 4326
         yield result

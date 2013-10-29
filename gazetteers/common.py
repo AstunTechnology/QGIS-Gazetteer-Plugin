@@ -38,3 +38,13 @@ def prepareURL(url, params, query):
 def search(url):
     QgsMessageLog.logMessage("URL:" + url, "Gazetteer")
     return urlopen(url).read()
+
+
+def text(item, xpath):
+    """ Return the text associated with a matched ElementTree node """
+    return item.findtext(xpath, '')
+
+
+def pretty_join(sep, items):
+    """ Joins a list of items on sep[arator] discarding any Falsey values """
+    return sep.join([str(i) for i in items if i])
