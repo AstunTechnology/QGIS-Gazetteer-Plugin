@@ -1,6 +1,6 @@
 # QGIS Gazetteer Plugin
 
-Adds a gazetteer search panel to QGIS 1.8 / 2.0 which by default searches GeoNames, Yahoo (place search) and OSM Nominatim plus an [Astun Technology](http://astuntechnology.com) iShare address search.
+Adds a gazetteer search panel to QGIS 1.8 / 2.0 which by default searches [GeoNames](http://www.geonames.org/), [Yahoo (place search)](http://developer.yahoo.com/geo/geoplanet/) and [OSM Nominatim](http://wiki.openstreetmap.org/wiki/Nominatim) plus an [Astun Technology](http://astuntechnology.com) iShare address search.
 
 ## Available Gazetteers
 
@@ -22,3 +22,17 @@ If you are using `git` then simply clone the repository into your QGIS python pl
 
     cd ~/.qgis2/python/plugins/
     git clone https://github.com/AstunTechnology/QGIS-Gazetteer-Plugin.git gazetteersearch
+
+## Copyright and usage of gazetteers
+
+### GeoNames
+
+GeoNames data is licensed under [Creative Commons Attribution 3.0 License](http://creativecommons.org/licenses/by/3.0/), further details regarding usage can be found on the [GeoNames website](http://www.geonames.org/).
+
+### Yahoo
+
+Yahoo place search is subject to the [Yahoo! APIs Terms of Use.](http://developer.yahoo.com/terms/), further details regarding usage can be found on the [Yahoo GeoPlanet website](http://developer.yahoo.com/geo/geoplanet/).
+
+### OSM Nominatim
+
+Use of the OSM Nominatim search is subject to the [Nominatim usage policy](http://wiki.openstreetmap.org/wiki/Nominatim_usage_policy). OpenStreetMap data is © OpenStreetMap contributors and available under the [Open Database Licence](www.openstreetmap.org/copyright).
