@@ -6,8 +6,7 @@ params = {
     'q': '##searchstring##',
     'limit': 50,
     'format': 'xml',
-    'addressdetails': 1,
-    'countrycodes': 'gb'
+    'addressdetails': 1
 }
 
 

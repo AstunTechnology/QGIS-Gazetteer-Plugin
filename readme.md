@@ -1,6 +1,6 @@
 # QGIS Gazetteer Plugin
 
-Adds a gazetteer search panel to QGIS 1.8 / 2.0 which by default searches GeoNames and Yahoo (place search) plus an [Astun Technology](http://astuntechnology.com) iShare address search.
+Adds a gazetteer search panel to QGIS 1.8 / 2.0 which by default searches GeoNames, Yahoo (place search) and OSM Nominatim plus an [Astun Technology](http://astuntechnology.com) iShare address search.
 
 ## Available Gazetteers
 
