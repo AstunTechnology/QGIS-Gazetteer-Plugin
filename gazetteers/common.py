@@ -37,7 +37,9 @@ def prepareURL(url, params, query):
 
 def search(url):
     QgsMessageLog.logMessage("URL:" + url, "Gazetteer")
-    return urlopen(url).read()
+    resp = urlopen(url)
+    content = unicode(resp.read(), resp.info().getparam('charset'))
+    return content
 
 
 def text(item, xpath):
@@ -47,4 +49,4 @@ def text(item, xpath):
 
 def pretty_join(sep, items):
     """ Joins a list of items on sep[arator] discarding any Falsey values """
-    return sep.join([str(i) for i in items if i])
+    return sep.join([i for i in items if i])

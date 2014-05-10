@@ -12,7 +12,7 @@ def parseRequestResults(data):
     def schema(name):
         return './/{http://where.yahooapis.com/v1/schema.rng}%s' % name
 
-    tree = ElementTree.fromstring(data)
+    tree = ElementTree.fromstring(data.encode('UTF-8'))
     for item in tree.findall(schema('place')):
         result = namedtuple('Result', ['description', 'x', 'y', 'zoom', 'epsg'])
         desc = [text(item, schema('name')),
@@ -29,6 +29,7 @@ def parseRequestResults(data):
 
 if __name__ == '__main__':
     with open('yahoo.xml') as f:
-        results = list(parseRequestResults(f.read()))
+        content = unicode(f.read(), 'UTF-8')
+        results = list(parseRequestResults(content))
         for item in results:
             print item.description

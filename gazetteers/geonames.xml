@@ -1,354 +1,354 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <geonames style="LONG">
-    <totalResultsCount>5324</totalResultsCount>
-    <geoname>
-        <toponymName>London</toponymName>
-        <name>London</name>
-        <lat>51.50853</lat>
-        <lng>-0.12574</lng>
-        <geonameId>2643743</geonameId>
-        <countryCode>GB</countryCode>
-        <countryName>United Kingdom</countryName>
-        <fcl>P</fcl>
-        <fcode>PPLC</fcode>
-        <fclName>city, village,...</fclName>
-        <fcodeName>capital of a political entity</fcodeName>
-        <population>7556900</population>
-    </geoname>
-    <geoname>
-        <toponymName>East London</toponymName>
-        <name>East London</name>
-        <lat>-33.01529</lat>
-        <lng>27.91162</lng>
-        <geonameId>1006984</geonameId>
-        <countryCode>ZA</countryCode>
-        <countryName>South Africa</countryName>
-        <fcl>P</fcl>
-        <fcode>PPLA2</fcode>
-        <fclName>city, village,...</fclName>
-        <fcodeName>seat of a second-order administrative division</fcodeName>
-        <population>478676</population>
-    </geoname>
-    <geoname>
-        <toponymName>City of London</toponymName>
-        <name>City of London</name>
-        <lat>51.51279</lat>
-        <lng>-0.09184</lng>
-        <geonameId>2643741</geonameId>
-        <countryCode>GB</countryCode>
-        <countryName>United Kingdom</countryName>
-        <fcl>P</fcl>
-        <fcode>PPLA3</fcode>
-        <fclName>city, village,...</fclName>
-        <fcodeName>seat of a third-order administrative division</fcodeName>
-        <population>7556900</population>
-    </geoname>
-    <geoname>
-        <toponymName>London</toponymName>
-        <name>London</name>
-        <lat>42.98339</lat>
-        <lng>-81.23304</lng>
-        <geonameId>6058560</geonameId>
-        <countryCode>CA</countryCode>
-        <countryName>Canada</countryName>
-        <fcl>P</fcl>
-        <fcode>PPL</fcode>
-        <fclName>city, village,...</fclName>
-        <fcodeName>populated place</fcodeName>
-        <population>346765</population>
-    </geoname>
-    <geoname>
-        <toponymName>New London</toponymName>
-        <name>New London</name>
-        <lat>41.35565</lat>
-        <lng>-72.09952</lng>
-        <geonameId>4839416</geonameId>
-        <countryCode>US</countryCode>
-        <countryName>United States</countryName>
-        <fcl>P</fcl>
-        <fcode>PPL</fcode>
-        <fclName>city, village,...</fclName>
-        <fcodeName>populated place</fcodeName>
-        <population>27620</population>
-    </geoname>
-    <geoname>
-        <toponymName>London Heathrow Airport</toponymName>
-        <name>Heathrow</name>
-        <lat>51.47115</lat>
-        <lng>-0.45649</lng>
-        <geonameId>2647216</geonameId>
-        <countryCode>GB</countryCode>
-        <countryName>United Kingdom</countryName>
-        <fcl>S</fcl>
-        <fcode>AIRP</fcode>
-        <fclName>spot, building, farm</fclName>
-        <fcodeName>airport</fcodeName>
-        <population />
-    </geoname>
-    <geoname>
-        <toponymName>London City Airport</toponymName>
-        <name>London City Airport</name>
-        <lat>51.50528</lat>
-        <lng>0.05528</lng>
-        <geonameId>6296599</geonameId>
-        <countryCode>GB</countryCode>
-        <countryName>United Kingdom</countryName>
-        <fcl>S</fcl>
-        <fcode>AIRP</fcode>
-        <fclName>spot, building, farm</fclName>
-        <fcodeName>airport</fcodeName>
-        <population />
-    </geoname>
-    <geoname>
-        <toponymName>New London County</toponymName>
-        <name>New London County</name>
-        <lat>41.46678</lat>
-        <lng>-72.1065</lng>
-        <geonameId>4839420</geonameId>
-        <countryCode>US</countryCode>
-        <countryName>United States</countryName>
-        <fcl>A</fcl>
-        <fcode>ADM2</fcode>
-        <fclName>country, state, region,...</fclName>
-        <fcodeName>second-order administrative division</fcodeName>
-        <population>274055</population>
-    </geoname>
-    <geoname>
-        <toponymName>Norwich</toponymName>
-        <name>Norwich</name>
-        <lat>41.52426</lat>
-        <lng>-72.07591</lng>
-        <geonameId>4839843</geonameId>
-        <countryCode>US</countryCode>
-        <countryName>United States</countryName>
-        <fcl>P</fcl>
-        <fcode>PPL</fcode>
-        <fclName>city, village,...</fclName>
-        <fcodeName>populated place</fcodeName>
-        <population>40493</population>
-    </geoname>
-    <geoname>
-        <toponymName>Groton-New London Airport</toponymName>
-        <name>Groton-New London Airport</name>
-        <lat>41.3301</lat>
-        <lng>-72.04452</lng>
-        <geonameId>4835487</geonameId>
-        <countryCode>US</countryCode>
-        <countryName>United States</countryName>
-        <fcl>S</fcl>
-        <fcode>AIRP</fcode>
-        <fclName>spot, building, farm</fclName>
-        <fcodeName>airport</fcodeName>
-        <population />
-    </geoname>
-    <geoname>
-        <toponymName>London, London-Corbin Airport-Magee Field</toponymName>
-        <name>London, London-Corbin Airport-Magee Field</name>
-        <lat>37.08223</lat>
-        <lng>-84.08492</lng>
-        <geonameId>6298569</geonameId>
-        <countryCode>US</countryCode>
-        <countryName>United States</countryName>
-        <fcl>S</fcl>
-        <fcode>AIRP</fcode>
-        <fclName>spot, building, farm</fclName>
-        <fcodeName>airport</fcodeName>
-        <population />
-    </geoname>
-    <geoname>
-        <toponymName>London</toponymName>
-        <name>London</name>
-        <lat>2.26815</lat>
-        <lng>9.78934</lng>
-        <geonameId>2308696</geonameId>
-        <countryCode>GQ</countryCode>
-        <countryName>Equatorial Guinea</countryName>
-        <fcl>P</fcl>
-        <fcode>PPL</fcode>
-        <fclName>city, village,...</fclName>
-        <fcodeName>populated place</fcodeName>
-        <population />
-    </geoname>
-    <geoname>
-        <toponymName>Little London</toponymName>
-        <name>Little London</name>
-        <lat>18.2483</lat>
-        <lng>-78.21641</lng>
-        <geonameId>3489741</geonameId>
-        <countryCode>JM</countryCode>
-        <countryName>Jamaica</countryName>
-        <fcl>P</fcl>
-        <fcode>PPL</fcode>
-        <fclName>city, village,...</fclName>
-        <fcodeName>populated place</fcodeName>
-        <population />
-    </geoname>
-    <geoname>
-        <toponymName>London Village</toponymName>
-        <name>London Village</name>
-        <lat>1.98487</lat>
-        <lng>-157.47502</lng>
-        <geonameId>4030939</geonameId>
-        <countryCode>KI</countryCode>
-        <countryName>Kiribati</countryName>
-        <fcl>P</fcl>
-        <fcode>PPL</fcode>
-        <fclName>city, village,...</fclName>
-        <fcodeName>populated place</fcodeName>
-        <population>1829</population>
-    </geoname>
-    <geoname>
-        <toponymName>London Biggin Hill Airport</toponymName>
-        <name>London Biggin Hill Airport</name>
-        <lat>51.33083</lat>
-        <lng>0.0325</lng>
-        <geonameId>6296597</geonameId>
-        <countryCode>GB</countryCode>
-        <countryName>United Kingdom</countryName>
-        <fcl>S</fcl>
-        <fcode>AIRP</fcode>
-        <fclName>spot, building, farm</fclName>
-        <fcodeName>airport</fcodeName>
-        <population />
-    </geoname>
-    <geoname>
-        <toponymName>London Reefs</toponymName>
-        <name>London Reefs</name>
-        <lat>8.85</lat>
-        <lng>112.53333</lng>
-        <geonameId>1879967</geonameId>
-        <countryCode />
-        <countryName />
-        <fcl>U</fcl>
-        <fcode>RFSU</fcode>
-        <fclName>undersea</fclName>
-        <fcodeName>reefs</fcodeName>
-        <population />
-    </geoname>
-    <geoname>
-        <toponymName>Tower of London</toponymName>
-        <name>The Tower of London</name>
-        <lat>51.50823</lat>
-        <lng>-0.0763</lng>
-        <geonameId>6286786</geonameId>
-        <countryCode>GB</countryCode>
-        <countryName>United Kingdom</countryName>
-        <fcl>S</fcl>
-        <fcode>CSTL</fcode>
-        <fclName>spot, building, farm</fclName>
-        <fcodeName>castle</fcodeName>
-        <population />
-    </geoname>
-    <geoname>
-        <toponymName>Gardner Lake Airport</toponymName>
-        <name>Gardner Lake Airport</name>
-        <lat>41.50902</lat>
-        <lng>-72.24408</lng>
-        <geonameId>4834876</geonameId>
-        <countryCode>US</countryCode>
-        <countryName>United States</countryName>
-        <fcl>S</fcl>
-        <fcode>AIRP</fcode>
-        <fclName>spot, building, farm</fclName>
-        <fcodeName>airport</fcodeName>
-        <population />
-    </geoname>
-    <geoname>
-        <toponymName>Groton</toponymName>
-        <name>Groton</name>
-        <lat>41.3501</lat>
-        <lng>-72.07841</lng>
-        <geonameId>4835461</geonameId>
-        <countryCode>US</countryCode>
-        <countryName>United States</countryName>
-        <fcl>P</fcl>
-        <fcode>PPL</fcode>
-        <fclName>city, village,...</fclName>
-        <fcodeName>populated place</fcodeName>
-        <population>10389</population>
-    </geoname>
-    <geoname>
-        <toponymName>Ledyard Center</toponymName>
-        <name>Ledyard Center</name>
-        <lat>41.43982</lat>
-        <lng>-72.01424</lng>
-        <geonameId>4837648</geonameId>
-        <countryCode>US</countryCode>
-        <countryName>United States</countryName>
-        <fcl>P</fcl>
-        <fcode>PPL</fcode>
-        <fclName>city, village,...</fclName>
-        <fcodeName>populated place</fcodeName>
-        <population>15212</population>
-    </geoname>
-    <geoname>
-        <toponymName>Montville Center</toponymName>
-        <name>Montville Center</name>
-        <lat>41.47899</lat>
-        <lng>-72.15119</lng>
-        <geonameId>4838887</geonameId>
-        <countryCode>US</countryCode>
-        <countryName>United States</countryName>
-        <fcl>P</fcl>
-        <fcode>PPL</fcode>
-        <fclName>city, village,...</fclName>
-        <fcodeName>populated place</fcodeName>
-        <population>20180</population>
-    </geoname>
-    <geoname>
-        <toponymName>East London Airport</toponymName>
-        <name>East London Airport</name>
-        <lat>-33.03572</lat>
-        <lng>27.82648</lng>
-        <geonameId>1020088</geonameId>
-        <countryCode>ZA</countryCode>
-        <countryName>South Africa</countryName>
-        <fcl>S</fcl>
-        <fcode>AIRP</fcode>
-        <fclName>spot, building, farm</fclName>
-        <fcodeName>airport</fcodeName>
-        <population />
-    </geoname>
-    <geoname>
-        <toponymName>Sutton</toponymName>
-        <name>Sutton</name>
-        <lat>51.35</lat>
-        <lng>-0.2</lng>
-        <geonameId>2636503</geonameId>
-        <countryCode>GB</countryCode>
-        <countryName>United Kingdom</countryName>
-        <fcl>P</fcl>
-        <fcode>PPLA3</fcode>
-        <fclName>city, village,...</fclName>
-        <fcodeName>seat of a third-order administrative division</fcodeName>
-        <population>187600</population>
-    </geoname>
-    <geoname>
-        <toponymName>London International Airport</toponymName>
-        <name>London International Airport</name>
-        <lat>43.02987</lat>
-        <lng>-81.14892</lng>
-        <geonameId>6296323</geonameId>
-        <countryCode>CA</countryCode>
-        <countryName>Canada</countryName>
-        <fcl>S</fcl>
-        <fcode>AIRP</fcode>
-        <fclName>spot, building, farm</fclName>
-        <fcodeName>airport</fcodeName>
-        <population />
-    </geoname>
-    <geoname>
-        <toponymName>London Lakes</toponymName>
-        <name>London Lakes</name>
-        <lat>-42.14</lat>
-        <lng>146.52</lng>
-        <geonameId>8211941</geonameId>
-        <countryCode>AU</countryCode>
-        <countryName>Australia</countryName>
-        <fcl>H</fcl>
-        <fcode>LK</fcode>
-        <fclName>stream, lake, ...</fclName>
-        <fcodeName>lake</fcodeName>
-        <population />
-    </geoname>
+<totalResultsCount>447</totalResultsCount>
+<geoname>
+<toponymName>Birmingham</toponymName>
+<name>Birmingham</name>
+<lat>52.48142</lat>
+<lng>-1.89983</lng>
+<geonameId>2655603</geonameId>
+<countryCode>GB</countryCode>
+<countryName>United Kingdom</countryName>
+<fcl>P</fcl>
+<fcode>PPLA2</fcode>
+<fclName>city, village,...</fclName>
+<fcodeName>seat of a second-order administrative division</fcodeName>
+<population>984333</population>
+</geoname>
+<geoname>
+<toponymName>Birmingham</toponymName>
+<name>Birmingham</name>
+<lat>33.52066</lat>
+<lng>-86.80249</lng>
+<geonameId>4049979</geonameId>
+<countryCode>US</countryCode>
+<countryName>United States</countryName>
+<fcl>P</fcl>
+<fcode>PPLA2</fcode>
+<fclName>city, village,...</fclName>
+<fcodeName>seat of a second-order administrative division</fcodeName>
+<population>212237</population>
+</geoname>
+<geoname>
+<toponymName>Birmingham Airport</toponymName>
+<name>Birmingham Airport</name>
+<lat>52.45386</lat>
+<lng>-1.74803</lng>
+<geonameId>6296572</geonameId>
+<countryCode>GB</countryCode>
+<countryName>United Kingdom</countryName>
+<fcl>S</fcl>
+<fcode>AIRP</fcode>
+<fclName>spot, building, farm</fclName>
+<fcodeName>airport</fcodeName>
+<population/>
+</geoname>
+<geoname>
+<toponymName>City and Borough of Birmingham</toponymName>
+<name>Birmingham</name>
+<lat>52.48048</lat>
+<lng>-1.89823</lng>
+<geonameId>3333125</geonameId>
+<countryCode>GB</countryCode>
+<countryName>United Kingdom</countryName>
+<fcl>A</fcl>
+<fcode>ADM2</fcode>
+<fclName>country, state, region,...</fclName>
+<fcodeName>second-order administrative division</fcodeName>
+<population/>
+</geoname>
+<geoname>
+<toponymName>Sutton Coldfield</toponymName>
+<name>Sutton Coldfield</name>
+<lat>52.56667</lat>
+<lng>-1.81667</lng>
+<geonameId>2636486</geonameId>
+<countryCode>GB</countryCode>
+<countryName>United Kingdom</countryName>
+<fcl>P</fcl>
+<fcode>PPL</fcode>
+<fclName>city, village,...</fclName>
+<fcodeName>populated place</fcodeName>
+<population>107030</population>
+</geoname>
+<geoname>
+<toponymName>New Birmingham</toponymName>
+<name>New Birmingham</name>
+<lat>52.61583</lat>
+<lng>-7.64028</lng>
+<geonameId>2962294</geonameId>
+<countryCode>IE</countryCode>
+<countryName>Ireland</countryName>
+<fcl>P</fcl>
+<fcode>PPL</fcode>
+<fclName>city, village,...</fclName>
+<fcodeName>populated place</fcodeName>
+<population/>
+</geoname>
+<geoname>
+<toponymName>Birmingham–Shuttlesworth International Airport</toponymName>
+<name>Birmingham–Shuttlesworth International Airport</name>
+<lat>33.56166</lat>
+<lng>-86.75254</lng>
+<geonameId>4049999</geonameId>
+<countryCode>US</countryCode>
+<countryName>United States</countryName>
+<fcl>S</fcl>
+<fcode>AIRP</fcode>
+<fclName>spot, building, farm</fclName>
+<fcodeName>airport</fcodeName>
+<population/>
+</geoname>
+<geoname>
+<toponymName>Birmingham Municipal Airport-North</toponymName>
+<name>Birmingham Municipal Airport-North</name>
+<lat>33.5676</lat>
+<lng>-86.74443</lng>
+<geonameId>4050001</geonameId>
+<countryCode>US</countryCode>
+<countryName>United States</countryName>
+<fcl>S</fcl>
+<fcode>AIRP</fcode>
+<fclName>spot, building, farm</fclName>
+<fcodeName>airport</fcodeName>
+<population/>
+</geoname>
+<geoname>
+<toponymName>Birmingham</toponymName>
+<name>Birmingham</name>
+<lat>42.5467</lat>
+<lng>-83.21132</lng>
+<geonameId>4986172</geonameId>
+<countryCode>US</countryCode>
+<countryName>United States</countryName>
+<fcl>P</fcl>
+<fcode>PPL</fcode>
+<fclName>city, village,...</fclName>
+<fcodeName>populated place</fcodeName>
+<population>20103</population>
+</geoname>
+<geoname>
+<toponymName>Birmingham Lake</toponymName>
+<name>Birmingham Lake</name>
+<lat>50.52717</lat>
+<lng>-92.41983</lng>
+<geonameId>5901868</geonameId>
+<countryCode>CA</countryCode>
+<countryName>Canada</countryName>
+<fcl>H</fcl>
+<fcode>LK</fcode>
+<fclName>stream, lake, ...</fclName>
+<fcodeName>lake</fcodeName>
+<population/>
+</geoname>
+<geoname>
+<toponymName>Birmingham Gardens</toponymName>
+<name>Birmingham Gardens</name>
+<lat>-32.89368</lat>
+<lng>151.69009</lng>
+<geonameId>8348426</geonameId>
+<countryCode>AU</countryCode>
+<countryName>Australia</countryName>
+<fcl>P</fcl>
+<fcode>PPLX</fcode>
+<fclName>city, village,...</fclName>
+<fcodeName>section of populated place</fcodeName>
+<population/>
+</geoname>
+<geoname>
+<toponymName>New Frankley in Birmingham</toponymName>
+<name>New Frankley in Birmingham</name>
+<lat>52.40556</lat>
+<lng>-2.01573</lng>
+<geonameId>7300538</geonameId>
+<countryCode>GB</countryCode>
+<countryName>United Kingdom</countryName>
+<fcl>A</fcl>
+<fcode>ADM3</fcode>
+<fclName>country, state, region,...</fclName>
+<fcodeName>third-order administrative division</fcodeName>
+<population/>
+</geoname>
+<geoname>
+<toponymName>Acocks Green</toponymName>
+<name>Acocks Green</name>
+<lat>52.45</lat>
+<lng>-1.81667</lng>
+<geonameId>2657703</geonameId>
+<countryCode>GB</countryCode>
+<countryName>United Kingdom</countryName>
+<fcl>P</fcl>
+<fcode>PPLX</fcode>
+<fclName>city, village,...</fclName>
+<fcodeName>section of populated place</fcodeName>
+<population>26635</population>
+</geoname>
+<geoname>
+<toponymName>Bartley Green</toponymName>
+<name>Bartley Green</name>
+<lat>52.43532</lat>
+<lng>-1.99707</lng>
+<geonameId>7302130</geonameId>
+<countryCode>GB</countryCode>
+<countryName>United Kingdom</countryName>
+<fcl>P</fcl>
+<fcode>PPL</fcode>
+<fclName>city, village,...</fclName>
+<fcodeName>populated place</fcodeName>
+<population>25473</population>
+</geoname>
+<geoname>
+<toponymName>North Birmingham</toponymName>
+<name>North Birmingham</name>
+<lat>33.55372</lat>
+<lng>-86.81888</lng>
+<geonameId>4080397</geonameId>
+<countryCode>US</countryCode>
+<countryName>United States</countryName>
+<fcl>P</fcl>
+<fcode>PPL</fcode>
+<fclName>city, village,...</fclName>
+<fcodeName>populated place</fcodeName>
+<population/>
+</geoname>
+<geoname>
+<toponymName>Birmingham</toponymName>
+<name>Birmingham</name>
+<lat>39.16584</lat>
+<lng>-94.45134</lng>
+<geonameId>4377224</geonameId>
+<countryCode>US</countryCode>
+<countryName>United States</countryName>
+<fcl>P</fcl>
+<fcode>PPL</fcode>
+<fclName>city, village,...</fclName>
+<fcodeName>populated place</fcodeName>
+<population>183</population>
+</geoname>
+<geoname>
+<toponymName>Birmingham</toponymName>
+<name>Birmingham</name>
+<lat>40.87891</lat>
+<lng>-91.94712</lng>
+<geonameId>4848666</geonameId>
+<countryCode>US</countryCode>
+<countryName>United States</countryName>
+<fcl>P</fcl>
+<fcode>PPL</fcode>
+<fclName>city, village,...</fclName>
+<fcodeName>populated place</fcodeName>
+<population>448</population>
+</geoname>
+<geoname>
+<toponymName>Birmingham</toponymName>
+<name>Birmingham</name>
+<lat>40.93782</lat>
+<lng>-86.10944</lng>
+<geonameId>4918152</geonameId>
+<countryCode>US</countryCode>
+<countryName>United States</countryName>
+<fcl>P</fcl>
+<fcode>PPL</fcode>
+<fclName>city, village,...</fclName>
+<fcodeName>populated place</fcodeName>
+<population/>
+</geoname>
+<geoname>
+<toponymName>Birmingham</toponymName>
+<name>Birmingham</name>
+<lat>40.64784</lat>
+<lng>-78.19529</lng>
+<geonameId>5180627</geonameId>
+<countryCode>US</countryCode>
+<countryName>United States</countryName>
+<fcl>P</fcl>
+<fcode>PPL</fcode>
+<fclName>city, village,...</fclName>
+<fcodeName>populated place</fcodeName>
+<population>90</population>
+</geoname>
+<geoname>
+<toponymName>Birmingham Bay</toponymName>
+<name>Birmingham Bay</name>
+<lat>73.38476</lat>
+<lng>-95.63403</lng>
+<geonameId>5901864</geonameId>
+<countryCode>CA</countryCode>
+<countryName>Canada</countryName>
+<fcl>H</fcl>
+<fcode>BAY</fcode>
+<fclName>stream, lake, ...</fclName>
+<fcodeName>bay</fcodeName>
+<population/>
+</geoname>
+<geoname>
+<toponymName>Birmingham Place</toponymName>
+<name>Birmingham Place</name>
+<lat>-32.8818</lat>
+<lng>151.6846</lng>
+<geonameId>8150156</geonameId>
+<countryCode>AU</countryCode>
+<countryName>Australia</countryName>
+<fcl>L</fcl>
+<fcode>PRK</fcode>
+<fclName>parks,area, ...</fclName>
+<fcodeName>park</fcodeName>
+<population/>
+</geoname>
+<geoname>
+<toponymName>Birmingham Hill</toponymName>
+<name>Birmingham Hill</name>
+<lat>-29.26119</lat>
+<lng>121.4492</lng>
+<geonameId>8856238</geonameId>
+<countryCode>AU</countryCode>
+<countryName>Australia</countryName>
+<fcl>T</fcl>
+<fcode>HLL</fcode>
+<fclName>mountain,hill,rock,... </fclName>
+<fcodeName>hill</fcodeName>
+<population/>
+</geoname>
+<geoname>
+<toponymName>University of Alabama Birmingham Airport</toponymName>
+<name>University of Alabama Birmingham Airport</name>
+<lat>33.49733</lat>
+<lng>-86.81471</lng>
+<geonameId>4095094</geonameId>
+<countryCode>US</countryCode>
+<countryName>United States</countryName>
+<fcl>S</fcl>
+<fcode>AIRP</fcode>
+<fclName>spot, building, farm</fclName>
+<fcodeName>airport</fcodeName>
+<population/>
+</geoname>
+<geoname>
+<toponymName>Birmingham Municipal City Police Airport</toponymName>
+<name>Birmingham Municipal City Police Airport</name>
+<lat>33.55844</lat>
+<lng>-86.74582</lng>
+<geonameId>4050003</geonameId>
+<countryCode>US</countryCode>
+<countryName>United States</countryName>
+<fcl>S</fcl>
+<fcode>AIRP</fcode>
+<fclName>spot, building, farm</fclName>
+<fcodeName>airport</fcodeName>
+<population/>
+</geoname>
+<geoname>
+<toponymName>City of Birmingham</toponymName>
+<name>City of Birmingham</name>
+<lat>42.54466</lat>
+<lng>-83.21667</lng>
+<geonameId>4986175</geonameId>
+<countryCode>US</countryCode>
+<countryName>United States</countryName>
+<fcl>A</fcl>
+<fcode>ADMD</fcode>
+<fclName>country, state, region,...</fclName>
+<fcodeName>administrative division</fcodeName>
+<population>20103</population>
+</geoname>
 </geonames>

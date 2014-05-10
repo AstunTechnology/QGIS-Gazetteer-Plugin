@@ -13,7 +13,7 @@ params = {
 
 
 def parseRequestResults(data):
-    tree = ElementTree.fromstring(data)
+    tree = ElementTree.fromstring(data.encode('UTF-8'))
     for item in tree.findall('geoname'):
         result = namedtuple('Result', ['description', 'x', 'y', 'zoom', 'epsg'])
         desc = [text(item, 'name'), text(item, 'countryName')]
@@ -26,6 +26,7 @@ def parseRequestResults(data):
 
 if __name__ == '__main__':
     with open('geonames.xml') as f:
-        results = list(parseRequestResults(f.read()))
+        content = unicode(f.read(), 'UTF-8')
+        results = list(parseRequestResults(content))
         for item in results:
             print item.description

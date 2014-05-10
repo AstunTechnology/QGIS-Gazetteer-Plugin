@@ -11,7 +11,7 @@ params = {
 
 
 def parseRequestResults(data):
-    tree = ElementTree.fromstring(data)
+    tree = ElementTree.fromstring(data.encode('UTF-8'))
     for place in tree.iter('place'):
         result = namedtuple('Result', ['description', 'x', 'y', 'zoom', 'epsg'])
         result.description = place.attrib['display_name']
