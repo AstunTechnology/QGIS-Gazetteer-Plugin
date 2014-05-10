@@ -20,3 +20,10 @@ def parseRequestResults(data):
         result.zoom = 50000
         result.epsg = 4326
         yield result
+
+if __name__ == '__main__':
+    with open('nominatim.xml') as f:
+        content = unicode(f.read(), 'UTF-8')
+        results = list(parseRequestResults(content))
+        for item in results:
+            print item.description
