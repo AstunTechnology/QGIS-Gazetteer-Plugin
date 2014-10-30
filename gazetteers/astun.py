@@ -1,16 +1,16 @@
 from json import loads
 from collections import namedtuple
 
-url = "http://test.astuntechnology.com/iShareLatest.web/getdata.aspx"
+url = "http://example.gov.uk/getdata.aspx"
 params = {
     'type': 'json',
     'RequestType': 'LocationSearch',
     'gettotals': 'true',
     'axuid': '1344265603167',
-    'mapsource': 'Workshop/MyHouse',
+    'mapsource': 'Example/MyHouse',
     '_': '1344265603168',
     'location': '##searchstring##',
-    'pagesize': '30',
+    'pagesize': '100',
     'startnum': '1',
 }
 
