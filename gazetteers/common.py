@@ -38,7 +38,8 @@ def prepareURL(url, params, query):
 def search(url):
     QgsMessageLog.logMessage("URL:" + url, "Gazetteer")
     resp = urlopen(url)
-    content = unicode(resp.read(), resp.info().getparam('charset'))
+    charset = resp.info().getparam('charset') or 'UTF-8'
+    content = unicode(resp.read(), charset)
     return content
 
 
