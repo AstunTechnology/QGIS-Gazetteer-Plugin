@@ -36,9 +36,6 @@ def icon():
 def qgisMinimumVersion():
     return "1.8"
 def classFactory(iface):
-    # Add the directory that this file live in to the start of sys.path
-    # so that imports can be relative and our modules have the highest priority
-    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     # Load gazetteerSearch class from file gazetteerSearch
     from gazetteersearch import gazetteerSearch
     return gazetteerSearch(iface)
