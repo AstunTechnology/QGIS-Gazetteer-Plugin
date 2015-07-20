@@ -116,7 +116,7 @@ class gazetteerSearch:
         data = common.search(url)
 
         try:
-            self.results = list(gazetteer.parseRequestResults(data))
+            self.results = list(gazetteer.parseRequestResults(data, self.iface))
         except ValueError:
             self.results = []
 

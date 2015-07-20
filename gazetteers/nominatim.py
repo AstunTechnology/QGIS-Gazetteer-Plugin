@@ -10,7 +10,7 @@ params = {
 }
 
 
-def parseRequestResults(data):
+def parseRequestResults(data, iface=None):
     tree = ElementTree.fromstring(data.encode('UTF-8'))
     for place in tree.iter('place'):
         result = namedtuple('Result', ['description', 'x', 'y', 'zoom', 'epsg'])

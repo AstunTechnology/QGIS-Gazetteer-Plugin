@@ -8,7 +8,7 @@ params = {
 }
 
 
-def parseRequestResults(data):
+def parseRequestResults(data, iface=None):
     def schema(name):
         return './/{http://where.yahooapis.com/v1/schema.rng}%s' % name
 

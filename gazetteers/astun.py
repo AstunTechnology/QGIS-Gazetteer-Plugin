@@ -15,7 +15,7 @@ params = {
 }
 
 
-def parseRequestResults(data):
+def parseRequestResults(data, iface=None):
     json_result = loads(data)
     columns = json_result['columns']
     for item in json_result['data']:

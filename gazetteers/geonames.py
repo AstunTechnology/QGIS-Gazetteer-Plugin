@@ -12,7 +12,7 @@ params = {
 }
 
 
-def parseRequestResults(data):
+def parseRequestResults(data, iface=None):
     tree = ElementTree.fromstring(data.encode('UTF-8'))
     for item in tree.findall('geoname'):
         result = namedtuple('Result', ['description', 'x', 'y', 'zoom', 'epsg'])
