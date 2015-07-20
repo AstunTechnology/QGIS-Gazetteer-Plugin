@@ -1,0 +1,365 @@
+{
+    "features": [
+        {
+            "bbox": [
+                -2.371111215165453,
+                53.76130570343602,
+                -2.36986369359412,
+                53.761731977596156
+            ],
+            "geometry": {
+                "coordinates": [
+                    -2.37026059924714,
+                    53.7615959420235
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "easting": 375688.000815603,
+                "id": 893811,
+                "northing": 429534.99970047,
+                "search_full": "Orange Street (Accrington)",
+                "search_short": "Orange Street (Accrington)",
+                "source": "road"
+            },
+            "type": "Feature"
+        },
+        {
+            "bbox": [
+                -1.380820289423801,
+                53.09585011873391,
+                -1.380641668509627,
+                53.096407339885936
+            ],
+            "geometry": {
+                "coordinates": [
+                    -1.3808202894238,
+                    53.0958510060908
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "easting": 441559.573854464,
+                "id": 1553301,
+                "northing": 355584.105640387,
+                "search_full": "Orange Street (Alfreton)",
+                "search_short": "Orange Street (Alfreton)",
+                "source": "road"
+            },
+            "type": "Feature"
+        },
+        {
+            "bbox": [
+                -1.72372959321645,
+                53.79227648693651,
+                -1.723644659962492,
+                53.79252690065214
+            ],
+            "geometry": {
+                "coordinates": [
+                    -1.72364465996249,
+                    53.7925267089308
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "easting": 418303.000846365,
+                "id": 191118,
+                "northing": 432947.999707119,
+                "search_full": "Orange Street (Bradford)",
+                "search_short": "Orange Street (Bradford)",
+                "source": "road"
+            },
+            "type": "Feature"
+        },
+        {
+            "bbox": [
+                -2.584354327991711,
+                51.46015087242426,
+                -2.582876452272107,
+                51.46063380116237
+            ],
+            "geometry": {
+                "coordinates": [
+                    -2.58364925669913,
+                    51.4603828775679
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "easting": 359547.76877369,
+                "id": 1122818,
+                "northing": 173651.414475694,
+                "search_full": "Orange Street (Bristol)",
+                "search_short": "Orange Street (Bristol)",
+                "source": "road"
+            },
+            "type": "Feature"
+        },
+        {
+            "bbox": [
+                1.07969386109777,
+                51.279981044461486,
+                1.080728872447131,
+                51.280544307894274
+            ],
+            "geometry": {
+                "coordinates": [
+                    1.08022839050167,
+                    51.2802365806626
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "easting": 614914.201918005,
+                "id": 1400135,
+                "northing": 157961.246501449,
+                "search_full": "Orange Street (Canterbury)",
+                "search_short": "Orange Street (Canterbury)",
+                "source": "road"
+            },
+            "type": "Feature"
+        },
+        {
+            "bbox": [
+                -0.132087037829194,
+                51.5087661159931,
+                -0.128499674088841,
+                51.50963418051656
+            ],
+            "geometry": {
+                "coordinates": [
+                    -0.130625522514096,
+                    51.5093956028199
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "easting": 529827.000880902,
+                "id": 2044809,
+                "northing": 180596.999509836,
+                "search_full": "Orange Street (City of Westminster)",
+                "search_short": "Orange Street (City of Westminster)",
+                "source": "road"
+            },
+            "type": "Feature"
+        },
+        {
+            "bbox": [
+                -1.86292398485184,
+                53.72434191694428,
+                -1.861551412038628,
+                53.72589582821393
+            ],
+            "geometry": {
+                "coordinates": [
+                    -1.86200155913553,
+                    53.7252204382317
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "easting": 409203.000839372,
+                "id": 190584,
+                "northing": 425432.999699511,
+                "search_full": "Orange Street (Halifax)",
+                "search_short": "Orange Street (Halifax)",
+                "source": "road"
+            },
+            "type": "Feature"
+        },
+        {
+            "bbox": [
+                -2.281470772519724,
+                53.489799198162586,
+                -2.280638240699675,
+                53.490345786860935
+            ],
+            "geometry": {
+                "coordinates": [
+                    -2.28107739082077,
+                    53.490114712049
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "easting": 381448.00081723,
+                "id": 382293,
+                "northing": 399303.999673282,
+                "search_full": "Orange Street (Pendleton)",
+                "search_short": "Orange Street (Pendleton)",
+                "source": "road"
+            },
+            "type": "Feature"
+        },
+        {
+            "bbox": [
+                -1.477851110071416,
+                53.380551356910026,
+                -1.477403954744275,
+                53.38147006101277
+            ],
+            "geometry": {
+                "coordinates": [
+                    -1.47762012855167,
+                    53.3810016880799
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "easting": 434846.000853399,
+                "id": 1532270,
+                "northing": 387254.999667572,
+                "search_full": "Orange Street (Sheffield)",
+                "search_short": "Orange Street (Sheffield)",
+                "source": "road"
+            },
+            "type": "Feature"
+        },
+        {
+            "bbox": [
+                -3.945662565731979,
+                51.61877095331476,
+                -3.944519576300497,
+                51.6190031931882
+            ],
+            "geometry": {
+                "coordinates": [
+                    -3.94523011242243,
+                    51.6188596225108
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "easting": 265426.389705317,
+                "id": 1760911,
+                "northing": 192907.918477493,
+                "search_full": "Orange Street (Swansea)",
+                "search_short": "Orange Street (Swansea)",
+                "source": "road"
+            },
+            "type": "Feature"
+        },
+        {
+            "bbox": [
+                0.344915048008772,
+                51.95212683921357,
+                0.346924528565825,
+                51.95333424051778
+            ],
+            "geometry": {
+                "coordinates": [
+                    0.346192123036981,
+                    51.9526535474652
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "easting": 561328.000906622,
+                "id": 2450141,
+                "northing": 230839.999552668,
+                "search_full": "Orange Street (Thaxted)",
+                "search_short": "Orange Street (Thaxted)",
+                "source": "road"
+            },
+            "type": "Feature"
+        },
+        {
+            "bbox": [
+                -0.722986623855187,
+                52.588077139138434,
+                -0.722813192481355,
+                52.588968498455216
+            ],
+            "geometry": {
+                "coordinates": [
+                    -0.722971472463714,
+                    52.5886000086053
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "easting": 486612.000875856,
+                "id": 1747312,
+                "northing": 299742.999598245,
+                "search_full": "Orange Street (Uppingham)",
+                "search_short": "Orange Street (Uppingham)",
+                "source": "road"
+            },
+            "type": "Feature"
+        },
+        {
+            "bbox": [
+                -1.135645105277832,
+                52.57528004551193,
+                -1.134939243199677,
+                52.57741523481234
+            ],
+            "geometry": {
+                "coordinates": [
+                    -1.13529346061769,
+                    52.5766578076081
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "easting": 458695.00085839,
+                "id": 2295869,
+                "northing": 297999.999593042,
+                "search_full": "Orange Street (Wigston)",
+                "search_short": "Orange Street (Wigston)",
+                "source": "road"
+            },
+            "type": "Feature"
+        },
+        {
+            "bbox": [
+                0.051179701209553,
+                51.34474941251428,
+                0.057036543853909,
+                51.346030727446895
+            ],
+            "geometry": {
+                "coordinates": [
+                    0.054149867968307,
+                    51.3452515324119
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "easting": 543160.581884441,
+                "id": 2540229,
+                "northing": 162687.985498604,
+                "search_full": "Orange Court Lane (Farthing Street)",
+                "search_short": "Orange Court Lane (Farthing Street)",
+                "source": "road"
+            },
+            "type": "Feature"
+        },
+        {
+            "bbox": [
+                0.051150382570935,
+                51.34406366870998,
+                0.058695304927207,
+                51.346030727446895
+            ],
+            "geometry": {
+                "coordinates": [
+                    0.055034426002634,
+                    51.3450417576442
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "easting": 543222.835884469,
+                "id": 2541477,
+                "northing": 162666.384498597,
+                "search_full": "Orange Court Lane (Farthing Street)",
+                "search_short": "Orange Court Lane (Farthing Street)",
+                "source": "road"
+            },
+            "type": "Feature"
+        }
+    ],
+    "type": "FeatureCollection"
+}
