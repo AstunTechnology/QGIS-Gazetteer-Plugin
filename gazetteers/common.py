@@ -1,6 +1,11 @@
-from urllib2 import urlopen
-from urllib import urlencode, quote
+from PyQt4.QtCore import QUrl
+from PyQt4.QtCore import Qt
+from PyQt4.QtNetwork import QNetworkRequest
 from qgis.core import QgsMessageLog
+from qgis.core import QgsNetworkAccessManager
+from urllib import urlencode, quote
+
+import cgi
 
 def getGazetteers():
     from ConfigParser import ConfigParser
@@ -35,12 +40,24 @@ def prepareURL(url, params, query):
     newurl = url + "?" + params
     return newurl.replace("##searchstring##", quote(str(query)))
 
-def search(url):
+def search(url, callback):
     QgsMessageLog.logMessage("URL:" + url, "Gazetteer")
-    resp = urlopen(url)
-    charset = resp.info().getparam('charset') or 'UTF-8'
-    content = unicode(resp.read(), charset)
-    return content
+
+    def requestFinished(reply):
+        # Disconnect from the signal
+        networkAccessManager = QgsNetworkAccessManager.instance()
+        networkAccessManager.finished.disconnect(requestFinished)
+        # Handle the reply
+        _, params = cgi.parse_header(reply.header(QNetworkRequest.ContentTypeHeader))
+        charset = params.get('charset', 'UTF-8')
+        data = unicode(reply.readAll(), charset)
+        # print 'requestFinished, data: %s' % data
+        reply.deleteLater()
+        callback(data)
+
+    networkAccessManager = QgsNetworkAccessManager.instance()
+    networkAccessManager.finished.connect(requestFinished)
+    networkAccessManager.get(QNetworkRequest(QUrl(url)))
 
 
 def text(item, xpath):

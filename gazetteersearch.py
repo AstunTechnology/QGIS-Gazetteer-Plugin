@@ -113,18 +113,21 @@ class gazetteerSearch:
         gazetteer_config = self.gazetteers[str(selectedGazetteer)]
         gazetteer = self.getGazetteerModule(gazetteer_config)
         url = common.prepareURL(gazetteer.url, gazetteer.params, searchString)
-        data = common.search(url)
 
-        try:
-            self.results = list(gazetteer.parseRequestResults(data, self.iface))
-        except ValueError:
-            self.results = []
+        def callback(data):
+            # print 'callback, data: %s' % data
+            try:
+                self.results = list(gazetteer.parseRequestResults(data, self.iface))
+            except ValueError:
+                self.results = []
 
-        if len(self.results) == 0:
-            self.widget.addError('No results found for "%s"' % searchString)
+            if len(self.results) == 0:
+                self.widget.addError('No results found for "%s"' % searchString)
 
-        for res in self.results:
-            self.widget.addResult(res.description)
+            for res in self.results:
+                self.widget.addResult(res.description)
+
+        common.search(url, callback)
 
     def clearResults(self):
         self.widget.clearResults()
