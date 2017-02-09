@@ -48,10 +48,15 @@ def search(url, callback):
         networkAccessManager = QgsNetworkAccessManager.instance()
         networkAccessManager.finished.disconnect(requestFinished)
         # Handle the reply
-        _, params = cgi.parse_header(reply.header(QNetworkRequest.ContentTypeHeader))
-        charset = params.get('charset', 'UTF-8')
+        charset = 'UTF-8'
+        try:
+            _, params = cgi.parse_header(reply.header(QNetworkRequest.ContentTypeHeader))
+            charset = params['charset']
+        except:
+            pass
+        print charset
         data = unicode(reply.readAll(), charset)
-        # print 'requestFinished, data: %s' % data
+        print 'requestFinished, data: %s' % data
         reply.deleteLater()
         callback(data)
 
