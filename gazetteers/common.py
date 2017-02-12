@@ -1,6 +1,6 @@
 from PyQt4.QtCore import QUrl
 from PyQt4.QtCore import Qt
-from PyQt4.QtNetwork import QNetworkRequest
+from PyQt4.QtNetwork import QNetworkRequest, QNetworkReply
 from qgis.core import QgsMessageLog
 from qgis.core import QgsNetworkAccessManager
 from urllib import urlencode, quote
@@ -48,17 +48,21 @@ def search(url, callback):
         networkAccessManager = QgsNetworkAccessManager.instance()
         networkAccessManager.finished.disconnect(requestFinished)
         # Handle the reply
-        charset = 'UTF-8'
-        try:
-            _, params = cgi.parse_header(reply.header(QNetworkRequest.ContentTypeHeader))
-            charset = params['charset']
-        except:
-            pass
-        print charset
-        data = unicode(reply.readAll(), charset)
-        print 'requestFinished, data: %s' % data
-        reply.deleteLater()
-        callback(data)
+        if reply.error() != QNetworkReply.NoError:
+            QgsMessageLog.logMessage("Network error #{0}: {1}".format(reply.error(), reply.errorString()), "Gazetteer")
+            callback(u'')
+        else:
+            charset = 'UTF-8'
+            try:
+                _, params = cgi.parse_header(reply.header(QNetworkRequest.ContentTypeHeader))
+                charset = params['charset']
+            except:
+                pass
+            QgsMessageLog.logMessage("charset: " + charset, "Gazetteer")
+            data = unicode(reply.readAll(), charset)
+            print 'requestFinished, data: %s' % data
+            reply.deleteLater()
+            callback(data)
 
     networkAccessManager = QgsNetworkAccessManager.instance()
     networkAccessManager.finished.connect(requestFinished)

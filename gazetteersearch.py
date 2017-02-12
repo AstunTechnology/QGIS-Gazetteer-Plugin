@@ -118,7 +118,7 @@ class gazetteerSearch:
             # print 'callback, data: %s' % data
             try:
                 self.results = list(gazetteer.parseRequestResults(data, self.iface))
-            except ValueError:
+            except:
                 self.results = []
 
             if len(self.results) == 0:
