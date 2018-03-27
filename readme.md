@@ -42,5 +42,7 @@ Use of the OSM Nominatim search is subject to the [Nominatim usage policy](http:
 ### Astun Technology
 
 * Uncomment the Astun Technology Gazetteer from `gazetteers\config.ini`
-* In `gazetteers\astun.py` edit the URL (line 4) to point at your iShare Maps getdata.aspx URL. This is generally your standard iShare Web URL, ending in getdata.aspx
-* Note that installations requiring credentials for access (such as iShareGIS) are not currently compatible with the Gazetteer Plugin.
+* In `gazetteers\astun.py`
+    * edit the `url` (line 4) to point at your iShare Maps `getdata.aspx` URL. This is generally your standard iShare Maps Web URL, ending in `getdata.aspx`
+    * edit the `mapsource` (line 10) to match your iShare MapSource (generally the default My Maps MapSource)
+* Note that installations requiring credentials for access (such as iShare GIS) are not currently compatible with the Gazetteer Plugin.
