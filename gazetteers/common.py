@@ -60,7 +60,6 @@ def search(url, callback):
                 pass
             QgsMessageLog.logMessage("charset: " + charset, "Gazetteer")
             data = unicode(reply.readAll(), charset)
-            print 'requestFinished, data: %s' % data
             reply.deleteLater()
             callback(data)
 
