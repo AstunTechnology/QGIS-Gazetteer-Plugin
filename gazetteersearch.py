@@ -32,7 +32,7 @@ from importlib import import_module
 from gazetteers import common
 import resources_rc
 
-log = lambda m: QgsMessageLog.logMessage(m,'Gazetteer')
+log = lambda m: QgsMessageLog.logMessage(m, 'Gazetteer')
 
 class gazetteerSearch:
     def __init__(self, iface):
@@ -110,12 +110,12 @@ class gazetteerSearch:
             self.dock.show()
 
     def runSearch(self, searchString, selectedGazetteer):
+        searchString = searchString.encode('utf-8')
         gazetteer_config = self.gazetteers[str(selectedGazetteer)]
         gazetteer = self.getGazetteerModule(gazetteer_config)
         url = common.prepareURL(gazetteer.url, gazetteer.params, searchString)
 
         def callback(data):
-            # print 'callback, data: %s' % data
             try:
                 self.results = list(gazetteer.parseRequestResults(data, self.iface))
             except:

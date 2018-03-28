@@ -38,7 +38,7 @@ def prepareParams(params, query, **kwargs):
 def prepareURL(url, params, query):
     params = prepareParams(params, query)
     newurl = url + "?" + params
-    return newurl.replace("##searchstring##", quote(str(query)))
+    return newurl.replace("##searchstring##", quote(query))
 
 def search(url, callback):
     QgsMessageLog.logMessage("URL:" + url, "Gazetteer")
@@ -65,7 +65,7 @@ def search(url, callback):
 
     networkAccessManager = QgsNetworkAccessManager.instance()
     networkAccessManager.finished.connect(requestFinished)
-    networkAccessManager.get(QNetworkRequest(QUrl(url)))
+    networkAccessManager.get(QNetworkRequest(QUrl(QUrl.fromPercentEncoding(url))))
 
 
 def text(item, xpath):
